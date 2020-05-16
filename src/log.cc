@@ -1,4 +1,5 @@
 #include "log.h"
+#include "config.h"
 
 namespace tadpole{
 
@@ -15,6 +16,7 @@ namespace tadpole{
 //%% 直接输出%
 
 //formatItem 派生类
+static ConfigVar<std::string>::ptr g_time_format = Config::Lookup<std::string>("time.format","%Y-%m-%d %H:%M:%S","log time format");
 
 class DateFormatItem:public LogFormatter::FormatItem{
 public:
@@ -24,7 +26,7 @@ public:
 						LogEvent::ptr event)override {
 	char mytime[32] = {0};
 	time_t tv = event->getTime();
-	strftime(mytime,sizeof(mytime),"%Y-%m-%d %H:%M:%S",localtime(&tv));
+	strftime(mytime,sizeof(mytime),g_time_format->getValue().c_str(),localtime(&tv));
 	os << mytime;
 	}
 };
@@ -293,6 +295,7 @@ void StdoutLogAppender::format(LogLevel::Level level,LogEvent::ptr event){
 FileLogAppender::FileLogAppender(const std::string & name)
 	:m_filename(name){
 	reopen();
+	m_type = 1;
 }
 bool FileLogAppender::reopen(){
 	if(m_fileStream.is_open()){
@@ -400,12 +403,194 @@ Logger::ptr LoggerMgr::getLogger(const std::string & name){
 	auto it = m_loggers.find(name);
 	if(it == m_loggers.end()){
 		auto logger = Logger::ptr(new Logger(name));
-		logger->addAppender(StdoutLogAppender::ptr(new StdoutLogAppender));
 		m_loggers.insert(make_pair(name,logger));
 		return logger;
 	}
 	return it->second;
 }
+
+//type=0 Stdout type=1 file
+struct LogAppDef{
+	LogAppDef()
+	:type(0)
+	,level(LogLevel::UNKNOW)
+	,filename("")
+	,format(""){
+	}
+	int type ; 
+	LogLevel::Level level;
+	std::string filename; 
+	std::string format;
+};
+
+struct LogDef{
+	LogDef()
+	:name("")
+	,level(LogLevel::UNKNOW){
+	}
+	std::string name ; 
+	LogLevel::Level level; 
+	std::vector<LogAppDef> appends;
+	
+	bool operator<(const LogDef & rhs){
+		if(name < rhs.name){
+			return true; 
+		}else if(name > rhs.name) {
+			return false; 
+		}
+
+		if(level < rhs.level){
+			return true; 
+		}else if (level > rhs.level){
+			return false; 
+		}
+
+		return appends.size() < appends.size();
+	}
+};
+
+//日志结构体和字符串转换，偏特化
+template <>
+class LexicalCast<std::string,LogDef>{
+public:
+	LogDef operator()(const std::string & str){
+		LogDef log;
+		YAML::Node node = YAML::Load(str);
+		if(node["name"].IsDefined()){
+			log.name = node["name"].as<std::string>();
+		}
+		if(node["level"].IsDefined()){
+			std::string level = node["level"].as<std::string>();
+			log.level = LogLevel::FromString(level);
+		}else{
+			log.level = LogLevel::UNKNOW;
+		}
+		if(node["appends"].IsDefined()){
+			YAML::Node apps = node["appends"];
+			for(auto it = apps.begin(); it != apps.end();
+				++it){
+				LogAppDef apd;
+				YAML::Node fp;
+				if((*it)["StdoutLogAppender"].IsDefined()){
+					apd.type = 0 ;
+					fp = (*it)["StdoutLogAppender"];
+				}else if((*it)["FileLogAppender"].IsDefined()){
+					apd.type = 1 ; 
+					fp = (*it)["FileLogAppender"];
+					if(fp["path"].IsDefined()){
+						apd.filename = fp["path"].as<std::string>();
+					}	
+				}
+
+				if(fp["level"].IsDefined()){
+					std::string level = fp["level"].as<std::string>();
+					apd.level = LogLevel::FromString(level);
+				}else{
+					apd.level = LogLevel::UNKNOW;
+				}
+				if (fp["format"].IsDefined()){
+					apd.format = fp["format"].as<std::string>();
+				}
+			
+				log.appends.push_back(apd);
+			}
+		}
+		return log;
+	}
+};
+
+template <>
+class LexicalCast<LogDef,std::string>{
+public:
+	std::string operator()(const LogDef& log){
+		YAML::Node node; 
+		node["name"] = log.name;
+		node["level"] = LogLevel::ToString(log.level);
+		
+		YAML::Node apds;
+		for(auto & it : log.appends){
+			YAML::Node fp ; 
+			if(it.type == 0){
+				fp["level"] = LogLevel::ToString(it.level);	
+				fp["format"] = it.format;
+				apds["StdoutLogAppender"] = fp;
+			}else if(it.type == 1){	
+				fp["level"] = LogLevel::ToString(it.level);
+				fp["format"] = it.format;
+				fp["path"] = it.filename;
+				apds["FileLogAppender"] = fp;
+			}
+		}
+		node["appends"].push_back(apds);
+
+		std::stringstream ss; 
+		ss << node;
+		return ss.str();
+	}
+};
+
+void LoggerMgr::fromYaml(const LogDef & log){
+	if(log.name.empty()){
+		return ;
+	}
+	Logger::ptr logger = getLogger(log.name);
+	logger->setLevel(log.level);
+	for(auto &it : log.appends){
+		LogAppender::ptr apd ; 
+		if(it.type == 0){
+			apd.reset(new StdoutLogAppender);
+		}else if (it.type == 1){
+			if(!it.filename.empty()){
+				apd.reset(new FileLogAppender(it.filename));
+			}
+		}
+		apd->setLevel(it.level);
+		if(!it.format.empty()){
+			apd->setFormat(it.format);
+		}
+		logger->addAppender(apd);
+	}
+}
+
+std::string LoggerMgr::toYamlString(){
+	std::vector<LogDef> vec;
+	vec.resize(m_loggers.size());
+	int i = 0 ; 
+	for(auto &logger : m_loggers){
+		vec[i].level = logger.second->getLevel();
+		vec[i].name = logger.second->getName();
+		for(auto &it : logger.second->getAppends()){
+			LogAppDef lad ;
+			lad.level = it->getLevel();
+			lad.format = it->getFormatString();
+			if(it->getType() == 1){
+				lad.filename = std::dynamic_pointer_cast<FileLogAppender>(it)->getFileName();
+				lad.type = 1;
+			}else {
+				lad.type = 0 ; 
+			}
+			vec[i].appends.push_back(lad);
+		}
+	}
+	try{
+		return LexicalCast<std::vector<LogDef>,std::string>()(vec);
+	}catch(...){
+		return "";
+	}
+}
+
+struct LogIniter{
+	LogIniter(){
+		ConfigVar<std::vector<LogDef> >::ptr g_logger_def = Config::Lookup<std::vector<LogDef> >("logs",{},"config logs");
+		Config::LoadFromYaml("./config/log.yml");
+		for(auto & it : g_logger_def->getValue()){
+			LogMgr::GetInstance()->fromYaml(it);
+		}
+	}
+};
+
+static LogIniter __log_init;
+
 
 }
 

@@ -1,0 +1,3 @@
+2020-05-16 14:21:23	0	[root]	[INFO]	[tests/test_config.cc:8]	[12922:0]	hello
+o
+5-16 12:55:58	2	[root]	[INFO]	[tests/test_yaml.cc:108]	[10587:0]	2

@@ -1,5 +1,5 @@
-#ifndef __TADPOLE_LOG_H__
-#define __TADPOLE_LOG_H_
+#ifndef __TADPOLE_LOG_H___
+#define __TADPOLE_LOG_H__
 
 #include <memory>
 #include <vector>
@@ -16,6 +16,9 @@
 #include "src/singleton.h"
 #include "src/util.h"
 
+/**
+ * @根据日志级别打印不同级别的日志
+ */
 #define TADPOLE_LOG_LEVEL(level,name) \
 	tadpole::EventWrap::ptr(new tadpole::EventWrap(name,level,tadpole::LogEvent::ptr(new tadpole::LogEvent(__LINE__\
 										 ,tadpole::GetThreadId(),tadpole::GetFiberId()\
@@ -267,6 +270,11 @@ public:
 	 * @brief 解析pattern格式
 	 */
 	void init();
+	
+	/**
+	 * @brief 获得原始需解析的字符串
+	 */
+	const std::string& getPattern()const {return m_pattern;}
 private:
 	//日志格式字符串
 	std::string m_pattern ; 
@@ -322,11 +330,23 @@ public:
 	 * @param[in] format 日志格式字符串
 	 */
 	void setFormat(const std::string & format);
+
+	/**
+	 * @brief 获得日志格式字符串
+	 */
+	std::string getFormatString()const {return m_logFormatter->getPattern();}
+
+	/**
+	 * @brief 获得日志类型
+	 */
+	int getType()const{return m_type;}
 protected:
 	//日志格式
 	LogFormatter::ptr m_logFormatter;
 	//日志级别，默认为UNKNOW
 	LogLevel::Level m_level = LogLevel::UNKNOW; 
+	//日志类型
+	int m_type = 0 ; 
 };
 
 /**
@@ -389,6 +409,11 @@ public:
 	 * @brief 重新打开文件
 	 */
 	bool reopen();
+
+	/**
+	 * @brief 获得文件名
+	 */
+	const std::string &getFileName()const {return m_filename;}
 private:
 	//文件流
 	std::fstream m_fileStream;
@@ -466,6 +491,22 @@ public:
 	 * @param[in] append 输出地
 	 */
 	void delAppender(LogAppender::ptr append);
+
+	/**
+	 * @brief 获得该日志所有的输出地
+	 */
+	std::vector<LogAppender::ptr> getAppends()const {return m_logAppenders;}
+
+	/**
+	 * @brief 获得日志器的日志级别
+	 */
+	LogLevel::Level getLevel()const {return m_level;}
+
+	/**
+	 * @brief 获得日志器名称
+	 */
+	std::string getName()const {return m_name;}
+
 private:
 	//日志输出地
 	std::vector<LogAppender::ptr> m_logAppenders ;
@@ -476,7 +517,7 @@ private:
 	//日志级别
 	LogLevel::Level m_level = LogLevel::UNKNOW;
 };
-
+struct LogDef;
 /**
  * @brief 日志器管理类
  */
@@ -487,6 +528,17 @@ public:
 	 * @param[in] name 日志器名称
 	 */
 	Logger::ptr getLogger(const std::string & name);
+	
+	/**
+	 * @brief 从yaml读到的结构提转换为日志器
+	 */
+	void fromYaml(const LogDef &);
+	
+	/**
+	 * @brief 将日志器转换为yaml字符串
+	 */
+	std::string toYamlString();
+
 private:
 	/**
 	 * @brief 日志器map 

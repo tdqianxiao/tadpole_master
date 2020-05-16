@@ -9,10 +9,12 @@ set(CMAKE_C_FLAGS "$ENV{CXXFLAGS} -rdynamic -O3 -fPIC -ggdb -std=c11 -Wall -Wno-
 
 include_directories(.)
 include_directories(./src)
+include_directories(~/yaml-cpp-master/include/yaml-cpp)
 
 set(LIB_SRC
       src/log.cc
 	  src/util.cc
+	  src/config.cc
     )
 
 add_library(tadpole SHARED ${LIB_SRC})
@@ -21,8 +23,13 @@ find_library(PTHREAD pthread)
 
 set(LIBS
         tadpole
+		yaml-cpp
         )
 
+
 tadpole_add_executable(test_log "tests/test_log.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_config "tests/test_config.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_yaml "tests/test_yaml.cc" tadpole "${LIBS}")
+
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
