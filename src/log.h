@@ -15,7 +15,7 @@
 
 #include "src/singleton.h"
 #include "src/util.h"
-
+#include "src/mutex.h"
 /**
  * @根据日志级别打印不同级别的日志
  */
@@ -416,7 +416,7 @@ public:
 	const std::string &getFileName()const {return m_filename;}
 private:
 	//文件流
-	std::fstream m_fileStream;
+	std::ofstream m_fileStream;
 	//文件名
 	std::string m_filename ; 
 };
@@ -430,6 +430,11 @@ public:
 	 * @brief 类型定义，日志器类的智能指针
 	 */
 	typedef std::shared_ptr<Logger> ptr;
+
+	/**
+	 * @brief 类型定义，定义锁的类型
+	 */
+	typedef SpinLock MutexType;
 
 public:
 	/**
@@ -485,6 +490,11 @@ public:
 	 * @param[in] append 输出地
 	 */
 	void addAppender(LogAppender::ptr append);
+
+	/**
+	 * @brief 清除所有输出地
+	 */
+	void clearAppender();
 	
 	/**
 	 * @brief 删除输出地
@@ -516,7 +526,11 @@ private:
 
 	//日志级别
 	LogLevel::Level m_level = LogLevel::UNKNOW;
+
+	//锁
+	MutexType m_mutex;
 };
+
 struct LogDef;
 /**
  * @brief 日志器管理类
@@ -544,6 +558,11 @@ private:
 	 * @brief 日志器map 
 	 */
 	std::map<std::string,Logger::ptr> m_loggers ; 
+
+	/**
+	 * @brief 读写锁
+	 */
+	RWMutex m_mutex;
 };
 
 /**

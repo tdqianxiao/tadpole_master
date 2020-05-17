@@ -7,7 +7,7 @@ logs:
            level: unknow
         - FileLogAppender:
            level: unknow 
-           path: ./config/log.txt
+           path: /root/project/tadpole_master/config/log.txt
   -
       name: system
       level: unknow 

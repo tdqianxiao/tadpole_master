@@ -1,0 +1,6 @@
+2020-05-17 21:14:29	0	[system]	[INFO]	[src/fiber.cc:61]	[2965:0]	mian fiber ~----------------
+2020-05-17 21:14:29	0	[system]	[INFO]	[src/fiber.cc:68]	[2965:0]	fiber begin--------------------
+2020-05-17 21:14:29	0	[system]	[INFO]	[src/fiber.cc:68]	[2965:1]	fiber begin--------------------
+2020-05-17 21:14:29	0	[system]	[INFO]	[src/fiber.cc:90]	[2965:1]	fiber end ------------2
+2020-05-17 21:14:29	0	[system]	[INFO]	[src/fiber.cc:90]	[2965:0]	fiber end ------------1
+2020-05-17 21:14:29	0	[system]	[INFO]	[src/fiber.cc:87]	[2965:0]	fiber main end ------------

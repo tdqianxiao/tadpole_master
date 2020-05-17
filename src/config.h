@@ -12,6 +12,7 @@
 #include <iostream>
 
 #include "yaml.h"
+#include "mutex.h"
 
 namespace tadpole{
 
@@ -346,6 +347,11 @@ public:
 	* @brief 类型定义，ConfigVar的智能指针
  	*/
 	typedef std::shared_ptr<ConfigVar> ptr;
+
+	/**
+	 * @brief 类型定义，锁的类型
+	 */
+	typedef Mutex MutexType;
 	
 	/**
 	 * @brief 构造函数
@@ -367,6 +373,7 @@ public:
 	 */
 	std::string toString()override{
 		try{
+			MutexType::Lock lock(m_mutex);
 			return LexicalCast<T,std::string>()(m_val);
 		}catch(...){
 			std::cout<< "lexical_cast error : "<<
@@ -385,6 +392,7 @@ public:
 			if(m_cb){
 				m_cb(m_val,temp_val);
 			}
+			MutexType::Lock lock(m_mutex);
 			m_val = temp_val;
 		}catch(...){
 			std::cout<< "lexical_cast error : string convent to "<<
@@ -410,6 +418,8 @@ private:
 	T m_val ; 
 	//监听回调函数
 	std::function<void(const T& old_val , const T& new_val)> m_cb;
+	//锁
+	MutexType m_mutex;
 };
 
 /**
@@ -427,9 +437,12 @@ public:
 	template <class T>
 	static typename ConfigVar<T>::ptr Lookup(const std::string & name 
 		, const T & val , const std::string & description = ""){
+		RWMutex::RDLock lock(GetMutex());
 		auto &data = GetData();
 		auto it = data.find(name);
+		lock.unlock();
 		typename ConfigVar<T>::ptr conf(new ConfigVar<T>(name , val , description));
+		RWMutex::WRLock lock2(GetMutex());
 		if(it == data.end()){
 			data.insert(std::make_pair(name,conf));
 		}else{
@@ -446,15 +459,17 @@ public:
 private:
 	/**
 	 * @brief 初始化加载的yaml配置
-	 * @param node yaml节点
-	 * @param p 配置前缀
+	 * @param[in] node yaml节点
+	 * @param[in] p 配置前缀
+	 * @param[out] configItems 保存解析的配置项
 	 */
-	static void InitFromYaml(const YAML::Node & node,const std::string & p);
+	static void InitFromYaml(const YAML::Node & node,const std::string & p,std::map<std::string,std::string> & configItems);
 	
 	/**
 	 * @brief 根据配置看是否需要更改原配置
+	 * @param[in] 解析之后的配置项
 	 */
-	static void LookupData();
+	static void LookupData(std::map<std::string,std::string> & configItems);
 	
 	/**
 	 * @具体配置值map,配置项存放位置
@@ -462,6 +477,11 @@ private:
 	static std::map<std::string,ConfigVarBase::ptr>& GetData(){
 		static std::map<std::string,ConfigVarBase::ptr> s_data;
 		return s_data;
+	}
+
+	static RWMutex & GetMutex(){
+		static RWMutex m_mutex;
+		return m_mutex;
 	}
 };
 

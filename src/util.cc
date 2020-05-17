@@ -1,4 +1,6 @@
 #include "util.h"
+#include "fiber.h"
+
 using namespace std::chrono;
 
 namespace tadpole{
@@ -11,7 +13,7 @@ uint32_t GetThreadId(){
 }
 
 uint32_t GetFiberId(){
-	return 0 ; 
+	return Fiber::GetFiberId();
 }
 
 uint64_t GetElapse(){

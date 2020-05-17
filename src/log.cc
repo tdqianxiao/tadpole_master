@@ -224,7 +224,8 @@ Logger::Logger(const std::string & name)
 
 void Logger::log(LogLevel::Level level , LogEvent::ptr event){
 	event->setLoggerName(m_name);
-	if(level >= m_level){	
+	if(level >= m_level){
+		MutexType::Lock lock(m_mutex);
 		for(auto & it : m_logAppenders){
 			if(level >= it->getLevel()){
 				it->format(level,event);
@@ -234,18 +235,26 @@ void Logger::log(LogLevel::Level level , LogEvent::ptr event){
 }
 
 void Logger::addAppender(LogAppender::ptr append){
+	MutexType::Lock lock(m_mutex);
 	if(append){
 		m_logAppenders.push_back(append);
 	}
 }
 
 void Logger::delAppender(LogAppender::ptr append){
+	MutexType::Lock lock(m_mutex);
 	for(auto it = m_logAppenders.begin(); it != m_logAppenders.end();
 		++it){
 		if(*it == append){
 			m_logAppenders.erase(it);
+			return ; 
 		}
 	}
+}
+
+void Logger::clearAppender(){
+	MutexType::Lock lock(m_mutex);
+	m_logAppenders.clear();
 }
 
 void Logger::debug(LogEvent::ptr event){
@@ -298,11 +307,11 @@ FileLogAppender::FileLogAppender(const std::string & name)
 	m_type = 1;
 }
 bool FileLogAppender::reopen(){
-	if(m_fileStream.is_open()){
+	if(m_fileStream){
 		m_fileStream.close();
 	}
-
-	m_fileStream.open(m_filename);
+	
+	m_fileStream.open(m_filename,std::ios::trunc);
 
 	return !!m_fileStream;
 }
@@ -400,9 +409,12 @@ LogFormatter::LogFormatter(const std::string& pattern)
 }
 
 Logger::ptr LoggerMgr::getLogger(const std::string & name){
+	RWMutex::RDLock lock(m_mutex);
 	auto it = m_loggers.find(name);
 	if(it == m_loggers.end()){
 		auto logger = Logger::ptr(new Logger(name));
+		lock.unlock();
+		RWMutex::WRLock lock2(m_mutex);
 		m_loggers.insert(make_pair(name,logger));
 		return logger;
 	}
@@ -590,7 +602,6 @@ struct LogIniter{
 };
 
 static LogIniter __log_init;
-
 
 }
 

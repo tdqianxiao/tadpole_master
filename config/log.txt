@@ -1,3 +1,6 @@
-2020-05-16 14:21:23	0	[root]	[INFO]	[tests/test_config.cc:8]	[12922:0]	hello
-o
-5-16 12:55:58	2	[root]	[INFO]	[tests/test_yaml.cc:108]	[10587:0]	2
+2020-05-17 21:14:29	0	[root]	[INFO]	[tests/test_fiber.cc:20]	[2965:0]	test_fiber begin
+2020-05-17 21:14:29	0	[root]	[INFO]	[tests/test_fiber.cc:12]	[2965:1]	fun begin
+2020-05-17 21:14:29	0	[root]	[INFO]	[tests/test_fiber.cc:7]	[2965:2]	fun2 begin
+2020-05-17 21:14:29	0	[root]	[INFO]	[tests/test_fiber.cc:8]	[2965:2]	fun2 end
+2020-05-17 21:14:29	0	[root]	[INFO]	[tests/test_fiber.cc:16]	[2965:1]	fun end
+2020-05-17 21:14:29	0	[root]	[INFO]	[tests/test_fiber.cc:24]	[2965:0]	test_fiber end
