@@ -42,6 +42,16 @@ public:
 	~Fiber();
 
 	/**
+	 * @brief 设置协程状态
+	 */
+	void setState(State s){m_state = s;}
+
+	/**
+	 * @brief 获得协程状态
+	 */
+ 
+ 	State getState()const {return m_state;}
+	/**
 	 * @brief 获得协程id
 	 */
 	uint32_t getFiberId(){return m_id;}
@@ -112,6 +122,7 @@ private:
 	 * @brief 协程执行函数
 	 */
 	static void MainFunc();
+
 private:
 	//协程id
 	uint32_t m_id = 0 ;

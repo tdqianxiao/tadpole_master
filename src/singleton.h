@@ -25,7 +25,7 @@ template<class T>
 class SinletonPtr{
 public:
 	/**
-	 * @获取单例实例
+	 * @brief 获取单例实例
 	 */
 	static std::shared_ptr<T> GetInstance(){
 		static std::shared_ptr<T> val(new T());

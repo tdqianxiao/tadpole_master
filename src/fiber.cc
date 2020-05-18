@@ -49,23 +49,25 @@ public:
 
 using StackPool = MemoryAlloc;
 
+//static std::atomic<int> myCount = {1};
+//static std::atomic<int> xCount = {1};
+
 Fiber::Fiber(){
 	m_state = EXEC;
 	SetCurFiber(this);
 	if(-1 == getcontext(&m_ctx)){
 		TADPOLE_LOG_ERROR(g_logger)<< "getcontext non success !";
 		throw std::logic_error("getcontext non success!");
-	}
+	}	
+//	TADPOLE_LOG_ERROR(g_logger)<< "create" <<myCount;
+//	++myCount;
 	++g_fiber_count;
-
-	TADPOLE_LOG_INFO(g_logger) << "mian fiber ~----------------";
 }
 
 Fiber::Fiber(std::function<void()> cb , const uint32_t & stacksize)
 	:m_id(++g_fiber_id)
 	,m_state(INIT)
 	,m_cb(cb){
-	TADPOLE_LOG_INFO(g_logger)<< "fiber begin--------------------";
 	if(-1 == getcontext(&m_ctx)){
 		TADPOLE_LOG_ERROR(g_logger)<< "getcontext non success !";
 		throw std::logic_error("getcontext non success!");
@@ -79,15 +81,17 @@ Fiber::Fiber(std::function<void()> cb , const uint32_t & stacksize)
 	m_ctx.uc_stack.ss_sp = m_stack; 
 	m_ctx.uc_stack.ss_size = m_stackSize;
 
+//	TADPOLE_LOG_ERROR(g_logger)<< "create" <<myCount;
+//	++myCount;
 	makecontext(&m_ctx,&Fiber::MainFunc,0);
 }
 
 Fiber::~Fiber(){
+//	TADPOLE_LOG_ERROR(g_logger)<< "~ " <<xCount;
+//	++xCount;
 	if(this == t_mainFiber.get()){
-		TADPOLE_LOG_INFO(g_logger) << "fiber main end ------------";
 		t_mainFiber = nullptr;	
 	}else{
-		TADPOLE_LOG_INFO(g_logger) << "fiber end ------------"<<m_id;
 		StackPool::Dealloc(m_stack,m_stackSize);	
 	}
 }

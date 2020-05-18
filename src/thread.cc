@@ -52,6 +52,7 @@ void Thread::join(){
 			TADPOLE_LOG_ERROR(g_logger) << "pthread_join non success !";
 			throw std::logic_error("pthread_join non success");
 		}
+		m_thread = 0; 
 	}
 }
 
