@@ -22,6 +22,16 @@ uint32_t GetFiberId();
  */
 uint64_t GetElapse();
 
+/**
+ *获得当前时间的毫秒数
+ */
+uint64_t GetTimeOfMS();
+
+/**
+ *获得当前时间的微妙数
+ */
+uint64_t GetTimeOfUS();
+
 }
 
 #endif 

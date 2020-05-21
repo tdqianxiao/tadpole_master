@@ -149,6 +149,11 @@ public:
 	}
 public:
 	/**
+	 * @brief 是否有空闲协线程
+	 */
+	bool hasIdleThread(){return m_idleThreadCount > 0;}
+
+	/**
 	 * @brief 通知一下idle里面阻塞的协程
 	 */
 	virtual void tickle();
@@ -166,7 +171,7 @@ public:
 	/**
 	 * @brief 获得当前线程的调度器
 	 */
-	static Scheduler::ptr GetCurScheduler();
+	static Scheduler* GetCurScheduler();
 
 	/**
 	 * @brief 调度器开始执行

@@ -8,9 +8,9 @@ static Logger::ptr g_logger = TADPOLE_FIND_LOGGER("system");
 
 static thread_local Scheduler * t_scheduler = nullptr;
 
-Scheduler::ptr Scheduler::GetCurScheduler(){
+Scheduler* Scheduler::GetCurScheduler(){
 	if(t_scheduler){
-		return t_scheduler->shared_from_this();
+		return t_scheduler;
 	}
 	return nullptr;
 }
@@ -25,6 +25,7 @@ Scheduler::Scheduler(uint32_t threadcount
 					,bool usercaller ,const std::string & name )
 					:m_threadCount(threadcount)
 					,m_name(name){
+	t_scheduler = this;
 	if(usercaller){
 		Fiber::GetCurFiber();
 		--m_threadCount;
@@ -57,8 +58,10 @@ void Scheduler::idle(){
 }
 
 bool Scheduler::stopping(){
-	return m_isStopping && m_activeThreadCount == 0&& 
-	 	   m_idleThreadCount == 0;
+	MutexType::Lock lock(m_mutex);
+	bool empty = m_fiberQueue.empty();
+	lock.unlock();
+	return m_isStopping && m_activeThreadCount == 0 && empty;
 }
 
 void Scheduler::stop(){

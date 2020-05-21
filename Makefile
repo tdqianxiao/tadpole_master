@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_iomanager
+
+# Build rule for target.
+test_iomanager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_iomanager
+.PHONY : test_iomanager
+
+# fast build rule for target.
+test_iomanager/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
+.PHONY : test_iomanager/fast
+
+#=============================================================================
 # Target rules for targets named test_scheduler
 
 # Build rule for target.
@@ -261,6 +274,33 @@ src/fiber.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/fiber.cc.s
 .PHONY : src/fiber.cc.s
 
+src/iomanager.o: src/iomanager.cc.o
+
+.PHONY : src/iomanager.o
+
+# target to build an object file
+src/iomanager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/iomanager.cc.o
+.PHONY : src/iomanager.cc.o
+
+src/iomanager.i: src/iomanager.cc.i
+
+.PHONY : src/iomanager.i
+
+# target to preprocess a source file
+src/iomanager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/iomanager.cc.i
+.PHONY : src/iomanager.cc.i
+
+src/iomanager.s: src/iomanager.cc.s
+
+.PHONY : src/iomanager.s
+
+# target to generate assembly for a file
+src/iomanager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/iomanager.cc.s
+.PHONY : src/iomanager.cc.s
+
 src/log.o: src/log.cc.o
 
 .PHONY : src/log.o
@@ -369,6 +409,33 @@ src/thread.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/thread.cc.s
 .PHONY : src/thread.cc.s
 
+src/timer.o: src/timer.cc.o
+
+.PHONY : src/timer.o
+
+# target to build an object file
+src/timer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/timer.cc.o
+.PHONY : src/timer.cc.o
+
+src/timer.i: src/timer.cc.i
+
+.PHONY : src/timer.i
+
+# target to preprocess a source file
+src/timer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/timer.cc.i
+.PHONY : src/timer.cc.i
+
+src/timer.s: src/timer.cc.s
+
+.PHONY : src/timer.s
+
+# target to generate assembly for a file
+src/timer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/timer.cc.s
+.PHONY : src/timer.cc.s
+
 src/util.o: src/util.cc.o
 
 .PHONY : src/util.o
@@ -449,6 +516,33 @@ tests/test_fiber.s: tests/test_fiber.cc.s
 tests/test_fiber.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.s
 .PHONY : tests/test_fiber.cc.s
+
+tests/test_iomanager.o: tests/test_iomanager.cc.o
+
+.PHONY : tests/test_iomanager.o
+
+# target to build an object file
+tests/test_iomanager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o
+.PHONY : tests/test_iomanager.cc.o
+
+tests/test_iomanager.i: tests/test_iomanager.cc.i
+
+.PHONY : tests/test_iomanager.i
+
+# target to preprocess a source file
+tests/test_iomanager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.i
+.PHONY : tests/test_iomanager.cc.i
+
+tests/test_iomanager.s: tests/test_iomanager.cc.s
+
+.PHONY : tests/test_iomanager.s
+
+# target to generate assembly for a file
+tests/test_iomanager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.s
+.PHONY : tests/test_iomanager.cc.s
 
 tests/test_log.o: tests/test_log.cc.o
 
@@ -564,6 +658,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... test_iomanager"
 	@echo "... rebuild_cache"
 	@echo "... test_scheduler"
 	@echo "... test_fiber"
@@ -579,6 +674,9 @@ help:
 	@echo "... src/fiber.o"
 	@echo "... src/fiber.i"
 	@echo "... src/fiber.s"
+	@echo "... src/iomanager.o"
+	@echo "... src/iomanager.i"
+	@echo "... src/iomanager.s"
 	@echo "... src/log.o"
 	@echo "... src/log.i"
 	@echo "... src/log.s"
@@ -591,6 +689,9 @@ help:
 	@echo "... src/thread.o"
 	@echo "... src/thread.i"
 	@echo "... src/thread.s"
+	@echo "... src/timer.o"
+	@echo "... src/timer.i"
+	@echo "... src/timer.s"
 	@echo "... src/util.o"
 	@echo "... src/util.i"
 	@echo "... src/util.s"
@@ -600,6 +701,9 @@ help:
 	@echo "... tests/test_fiber.o"
 	@echo "... tests/test_fiber.i"
 	@echo "... tests/test_fiber.s"
+	@echo "... tests/test_iomanager.o"
+	@echo "... tests/test_iomanager.i"
+	@echo "... tests/test_iomanager.s"
 	@echo "... tests/test_log.o"
 	@echo "... tests/test_log.i"
 	@echo "... tests/test_log.s"
