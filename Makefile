@@ -62,17 +62,6 @@ CMAKE_BINARY_DIR = /root/project/tadpole_master
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -83,6 +72,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -117,84 +117,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_iomanager
-
-# Build rule for target.
-test_iomanager: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_iomanager
-.PHONY : test_iomanager
-
-# fast build rule for target.
-test_iomanager/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
-.PHONY : test_iomanager/fast
-
-#=============================================================================
-# Target rules for targets named test_scheduler
-
-# Build rule for target.
-test_scheduler: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_scheduler
-.PHONY : test_scheduler
-
-# fast build rule for target.
-test_scheduler/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
-.PHONY : test_scheduler/fast
-
-#=============================================================================
-# Target rules for targets named test_fiber
-
-# Build rule for target.
-test_fiber: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_fiber
-.PHONY : test_fiber
-
-# fast build rule for target.
-test_fiber/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
-.PHONY : test_fiber/fast
-
-#=============================================================================
-# Target rules for targets named test_thread
-
-# Build rule for target.
-test_thread: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_thread
-.PHONY : test_thread
-
-# fast build rule for target.
-test_thread/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
-.PHONY : test_thread/fast
-
-#=============================================================================
-# Target rules for targets named test_yaml
-
-# Build rule for target.
-test_yaml: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_yaml
-.PHONY : test_yaml
-
-# fast build rule for target.
-test_yaml/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_yaml.dir/build.make CMakeFiles/test_yaml.dir/build
-.PHONY : test_yaml/fast
-
-#=============================================================================
-# Target rules for targets named test_config
-
-# Build rule for target.
-test_config: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_config
-.PHONY : test_config
-
-# fast build rule for target.
-test_config/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
-.PHONY : test_config/fast
-
-#=============================================================================
 # Target rules for targets named test_log
 
 # Build rule for target.
@@ -219,6 +141,124 @@ tadpole: cmake_check_build_system
 tadpole/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/build
 .PHONY : tadpole/fast
+
+#=============================================================================
+# Target rules for targets named test_hook
+
+# Build rule for target.
+test_hook: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hook
+.PHONY : test_hook
+
+# fast build rule for target.
+test_hook/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
+.PHONY : test_hook/fast
+
+#=============================================================================
+# Target rules for targets named test_config
+
+# Build rule for target.
+test_config: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_config
+.PHONY : test_config
+
+# fast build rule for target.
+test_config/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
+.PHONY : test_config/fast
+
+#=============================================================================
+# Target rules for targets named test_yaml
+
+# Build rule for target.
+test_yaml: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_yaml
+.PHONY : test_yaml
+
+# fast build rule for target.
+test_yaml/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_yaml.dir/build.make CMakeFiles/test_yaml.dir/build
+.PHONY : test_yaml/fast
+
+#=============================================================================
+# Target rules for targets named test_thread
+
+# Build rule for target.
+test_thread: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_thread
+.PHONY : test_thread
+
+# fast build rule for target.
+test_thread/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
+.PHONY : test_thread/fast
+
+#=============================================================================
+# Target rules for targets named test_fiber
+
+# Build rule for target.
+test_fiber: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_fiber
+.PHONY : test_fiber
+
+# fast build rule for target.
+test_fiber/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
+.PHONY : test_fiber/fast
+
+#=============================================================================
+# Target rules for targets named test_scheduler
+
+# Build rule for target.
+test_scheduler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_scheduler
+.PHONY : test_scheduler
+
+# fast build rule for target.
+test_scheduler/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
+.PHONY : test_scheduler/fast
+
+#=============================================================================
+# Target rules for targets named test_iomanager
+
+# Build rule for target.
+test_iomanager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_iomanager
+.PHONY : test_iomanager
+
+# fast build rule for target.
+test_iomanager/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
+.PHONY : test_iomanager/fast
+
+src/address.o: src/address.cc.o
+
+.PHONY : src/address.o
+
+# target to build an object file
+src/address.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/address.cc.o
+.PHONY : src/address.cc.o
+
+src/address.i: src/address.cc.i
+
+.PHONY : src/address.i
+
+# target to preprocess a source file
+src/address.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/address.cc.i
+.PHONY : src/address.cc.i
+
+src/address.s: src/address.cc.s
+
+.PHONY : src/address.s
+
+# target to generate assembly for a file
+src/address.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/address.cc.s
+.PHONY : src/address.cc.s
 
 src/config.o: src/config.cc.o
 
@@ -247,6 +287,33 @@ src/config.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/config.cc.s
 .PHONY : src/config.cc.s
 
+src/fdmanager.o: src/fdmanager.cc.o
+
+.PHONY : src/fdmanager.o
+
+# target to build an object file
+src/fdmanager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/fdmanager.cc.o
+.PHONY : src/fdmanager.cc.o
+
+src/fdmanager.i: src/fdmanager.cc.i
+
+.PHONY : src/fdmanager.i
+
+# target to preprocess a source file
+src/fdmanager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/fdmanager.cc.i
+.PHONY : src/fdmanager.cc.i
+
+src/fdmanager.s: src/fdmanager.cc.s
+
+.PHONY : src/fdmanager.s
+
+# target to generate assembly for a file
+src/fdmanager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/fdmanager.cc.s
+.PHONY : src/fdmanager.cc.s
+
 src/fiber.o: src/fiber.cc.o
 
 .PHONY : src/fiber.o
@@ -273,6 +340,33 @@ src/fiber.s: src/fiber.cc.s
 src/fiber.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/fiber.cc.s
 .PHONY : src/fiber.cc.s
+
+src/hook.o: src/hook.cc.o
+
+.PHONY : src/hook.o
+
+# target to build an object file
+src/hook.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/hook.cc.o
+.PHONY : src/hook.cc.o
+
+src/hook.i: src/hook.cc.i
+
+.PHONY : src/hook.i
+
+# target to preprocess a source file
+src/hook.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/hook.cc.i
+.PHONY : src/hook.cc.i
+
+src/hook.s: src/hook.cc.s
+
+.PHONY : src/hook.s
+
+# target to generate assembly for a file
+src/hook.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/hook.cc.s
+.PHONY : src/hook.cc.s
 
 src/iomanager.o: src/iomanager.cc.o
 
@@ -517,6 +611,33 @@ tests/test_fiber.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.s
 .PHONY : tests/test_fiber.cc.s
 
+tests/test_hook.o: tests/test_hook.cc.o
+
+.PHONY : tests/test_hook.o
+
+# target to build an object file
+tests/test_hook.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.o
+.PHONY : tests/test_hook.cc.o
+
+tests/test_hook.i: tests/test_hook.cc.i
+
+.PHONY : tests/test_hook.i
+
+# target to preprocess a source file
+tests/test_hook.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.i
+.PHONY : tests/test_hook.cc.i
+
+tests/test_hook.s: tests/test_hook.cc.s
+
+.PHONY : tests/test_hook.s
+
+# target to generate assembly for a file
+tests/test_hook.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.s
+.PHONY : tests/test_hook.cc.s
+
 tests/test_iomanager.o: tests/test_iomanager.cc.o
 
 .PHONY : tests/test_iomanager.o
@@ -658,22 +779,32 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... test_iomanager"
-	@echo "... rebuild_cache"
-	@echo "... test_scheduler"
-	@echo "... test_fiber"
-	@echo "... test_thread"
-	@echo "... test_yaml"
-	@echo "... test_config"
-	@echo "... edit_cache"
 	@echo "... test_log"
 	@echo "... tadpole"
+	@echo "... edit_cache"
+	@echo "... test_hook"
+	@echo "... test_config"
+	@echo "... rebuild_cache"
+	@echo "... test_yaml"
+	@echo "... test_thread"
+	@echo "... test_fiber"
+	@echo "... test_scheduler"
+	@echo "... test_iomanager"
+	@echo "... src/address.o"
+	@echo "... src/address.i"
+	@echo "... src/address.s"
 	@echo "... src/config.o"
 	@echo "... src/config.i"
 	@echo "... src/config.s"
+	@echo "... src/fdmanager.o"
+	@echo "... src/fdmanager.i"
+	@echo "... src/fdmanager.s"
 	@echo "... src/fiber.o"
 	@echo "... src/fiber.i"
 	@echo "... src/fiber.s"
+	@echo "... src/hook.o"
+	@echo "... src/hook.i"
+	@echo "... src/hook.s"
 	@echo "... src/iomanager.o"
 	@echo "... src/iomanager.i"
 	@echo "... src/iomanager.s"
@@ -701,6 +832,9 @@ help:
 	@echo "... tests/test_fiber.o"
 	@echo "... tests/test_fiber.i"
 	@echo "... tests/test_fiber.s"
+	@echo "... tests/test_hook.o"
+	@echo "... tests/test_hook.i"
+	@echo "... tests/test_hook.s"
 	@echo "... tests/test_iomanager.o"
 	@echo "... tests/test_iomanager.i"
 	@echo "... tests/test_iomanager.s"

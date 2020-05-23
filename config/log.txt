@@ -1,3 +1,0 @@
-2020-05-21 15:30:15	0	[root]	[INFO]	[tests/test_iomanager.cc:35]	[12794:0]	accept success
-2020-05-21 15:30:15	2	[root]	[INFO]	[tests/test_iomanager.cc:12]	[12802:9]	fun ~
-2020-05-21 15:30:20	5006	[root]	[INFO]	[tests/test_iomanager.cc:12]	[12800:10]	fun ~

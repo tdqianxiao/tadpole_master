@@ -1,3 +1,4 @@
+#include "hook.h"
 #include "iomanager.h"
 #include "log.h"
 

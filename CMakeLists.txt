@@ -12,15 +12,18 @@ include_directories(./src)
 include_directories(~/yaml-cpp-master/include/yaml-cpp)
 
 set(LIB_SRC
-      src/log.cc
-	  src/util.cc
+	  src/hook.cc
 	  src/config.cc
+	  src/util.cc
+	  src/fdmanager.cc
+      src/log.cc
 	  src/thread.cc
 	  src/mutex.cc
 	  src/fiber.cc
 	  src/scheduler.cc
 	  src/iomanager.cc
 	  src/timer.cc
+	  src/address.cc
     )
 
 add_library(tadpole SHARED ${LIB_SRC})
@@ -31,6 +34,7 @@ set(LIBS
         tadpole
 		yaml-cpp
 		pthread
+		dl
         )
 
 
@@ -41,6 +45,7 @@ tadpole_add_executable(test_thread "tests/test_thread.cc" tadpole "${LIBS}")
 tadpole_add_executable(test_fiber "tests/test_fiber.cc" tadpole "${LIBS}")
 tadpole_add_executable(test_scheduler "tests/test_scheduler.cc" tadpole "${LIBS}")
 tadpole_add_executable(test_iomanager "tests/test_iomanager.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_hook "tests/test_hook.cc" tadpole "${LIBS}")
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
