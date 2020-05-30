@@ -87,6 +87,7 @@ IOManager::~IOManager(){
 		schedule(it->getCb());
 	}
 	stop();
+//	TADPOLE_LOG_ERROR(g_logger)<<"stop success";
 	close(m_epfd);
 	close(m_tickles[0]);
 	close(m_tickles[1]);

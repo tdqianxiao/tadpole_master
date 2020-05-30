@@ -117,17 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_log
+# Target rules for targets named test_bytearray
 
 # Build rule for target.
-test_log: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_log
-.PHONY : test_log
+test_bytearray: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_bytearray
+.PHONY : test_bytearray
 
 # fast build rule for target.
-test_log/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/build
-.PHONY : test_log/fast
+test_bytearray/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/build
+.PHONY : test_bytearray/fast
 
 #=============================================================================
 # Target rules for targets named tadpole
@@ -141,6 +141,19 @@ tadpole: cmake_check_build_system
 tadpole/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/build
 .PHONY : tadpole/fast
+
+#=============================================================================
+# Target rules for targets named test_log
+
+# Build rule for target.
+test_log: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_log
+.PHONY : test_log
+
+# fast build rule for target.
+test_log/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/build
+.PHONY : test_log/fast
 
 #=============================================================================
 # Target rules for targets named test_hook
@@ -167,6 +180,19 @@ test_config: cmake_check_build_system
 test_config/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
 .PHONY : test_config/fast
+
+#=============================================================================
+# Target rules for targets named test_socket
+
+# Build rule for target.
+test_socket: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_socket
+.PHONY : test_socket
+
+# fast build rule for target.
+test_socket/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
+.PHONY : test_socket/fast
 
 #=============================================================================
 # Target rules for targets named test_yaml
@@ -233,6 +259,19 @@ test_iomanager/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
 .PHONY : test_iomanager/fast
 
+#=============================================================================
+# Target rules for targets named test_addr
+
+# Build rule for target.
+test_addr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_addr
+.PHONY : test_addr
+
+# fast build rule for target.
+test_addr/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/build
+.PHONY : test_addr/fast
+
 src/address.o: src/address.cc.o
 
 .PHONY : src/address.o
@@ -259,6 +298,33 @@ src/address.s: src/address.cc.s
 src/address.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/address.cc.s
 .PHONY : src/address.cc.s
+
+src/bytearray.o: src/bytearray.cc.o
+
+.PHONY : src/bytearray.o
+
+# target to build an object file
+src/bytearray.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/bytearray.cc.o
+.PHONY : src/bytearray.cc.o
+
+src/bytearray.i: src/bytearray.cc.i
+
+.PHONY : src/bytearray.i
+
+# target to preprocess a source file
+src/bytearray.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/bytearray.cc.i
+.PHONY : src/bytearray.cc.i
+
+src/bytearray.s: src/bytearray.cc.s
+
+.PHONY : src/bytearray.s
+
+# target to generate assembly for a file
+src/bytearray.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/bytearray.cc.s
+.PHONY : src/bytearray.cc.s
 
 src/config.o: src/config.cc.o
 
@@ -476,6 +542,33 @@ src/scheduler.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/scheduler.cc.s
 .PHONY : src/scheduler.cc.s
 
+src/socket.o: src/socket.cc.o
+
+.PHONY : src/socket.o
+
+# target to build an object file
+src/socket.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/socket.cc.o
+.PHONY : src/socket.cc.o
+
+src/socket.i: src/socket.cc.i
+
+.PHONY : src/socket.i
+
+# target to preprocess a source file
+src/socket.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/socket.cc.i
+.PHONY : src/socket.cc.i
+
+src/socket.s: src/socket.cc.s
+
+.PHONY : src/socket.s
+
+# target to generate assembly for a file
+src/socket.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/socket.cc.s
+.PHONY : src/socket.cc.s
+
 src/thread.o: src/thread.cc.o
 
 .PHONY : src/thread.o
@@ -556,6 +649,60 @@ src/util.s: src/util.cc.s
 src/util.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/util.cc.s
 .PHONY : src/util.cc.s
+
+tests/test_addr.o: tests/test_addr.cc.o
+
+.PHONY : tests/test_addr.o
+
+# target to build an object file
+tests/test_addr.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/tests/test_addr.cc.o
+.PHONY : tests/test_addr.cc.o
+
+tests/test_addr.i: tests/test_addr.cc.i
+
+.PHONY : tests/test_addr.i
+
+# target to preprocess a source file
+tests/test_addr.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/tests/test_addr.cc.i
+.PHONY : tests/test_addr.cc.i
+
+tests/test_addr.s: tests/test_addr.cc.s
+
+.PHONY : tests/test_addr.s
+
+# target to generate assembly for a file
+tests/test_addr.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/tests/test_addr.cc.s
+.PHONY : tests/test_addr.cc.s
+
+tests/test_bytearray.o: tests/test_bytearray.cc.o
+
+.PHONY : tests/test_bytearray.o
+
+# target to build an object file
+tests/test_bytearray.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cc.o
+.PHONY : tests/test_bytearray.cc.o
+
+tests/test_bytearray.i: tests/test_bytearray.cc.i
+
+.PHONY : tests/test_bytearray.i
+
+# target to preprocess a source file
+tests/test_bytearray.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cc.i
+.PHONY : tests/test_bytearray.cc.i
+
+tests/test_bytearray.s: tests/test_bytearray.cc.s
+
+.PHONY : tests/test_bytearray.s
+
+# target to generate assembly for a file
+tests/test_bytearray.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cc.s
+.PHONY : tests/test_bytearray.cc.s
 
 tests/test_config.o: tests/test_config.cc.o
 
@@ -719,6 +866,33 @@ tests/test_scheduler.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.s
 .PHONY : tests/test_scheduler.cc.s
 
+tests/test_socket.o: tests/test_socket.cc.o
+
+.PHONY : tests/test_socket.o
+
+# target to build an object file
+tests/test_socket.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/tests/test_socket.cc.o
+.PHONY : tests/test_socket.cc.o
+
+tests/test_socket.i: tests/test_socket.cc.i
+
+.PHONY : tests/test_socket.i
+
+# target to preprocess a source file
+tests/test_socket.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/tests/test_socket.cc.i
+.PHONY : tests/test_socket.cc.i
+
+tests/test_socket.s: tests/test_socket.cc.s
+
+.PHONY : tests/test_socket.s
+
+# target to generate assembly for a file
+tests/test_socket.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/tests/test_socket.cc.s
+.PHONY : tests/test_socket.cc.s
+
 tests/test_thread.o: tests/test_thread.cc.o
 
 .PHONY : tests/test_thread.o
@@ -779,20 +953,26 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... test_log"
-	@echo "... tadpole"
+	@echo "... test_bytearray"
 	@echo "... edit_cache"
+	@echo "... tadpole"
+	@echo "... test_log"
 	@echo "... test_hook"
 	@echo "... test_config"
 	@echo "... rebuild_cache"
+	@echo "... test_socket"
 	@echo "... test_yaml"
 	@echo "... test_thread"
 	@echo "... test_fiber"
 	@echo "... test_scheduler"
 	@echo "... test_iomanager"
+	@echo "... test_addr"
 	@echo "... src/address.o"
 	@echo "... src/address.i"
 	@echo "... src/address.s"
+	@echo "... src/bytearray.o"
+	@echo "... src/bytearray.i"
+	@echo "... src/bytearray.s"
 	@echo "... src/config.o"
 	@echo "... src/config.i"
 	@echo "... src/config.s"
@@ -817,6 +997,9 @@ help:
 	@echo "... src/scheduler.o"
 	@echo "... src/scheduler.i"
 	@echo "... src/scheduler.s"
+	@echo "... src/socket.o"
+	@echo "... src/socket.i"
+	@echo "... src/socket.s"
 	@echo "... src/thread.o"
 	@echo "... src/thread.i"
 	@echo "... src/thread.s"
@@ -826,6 +1009,12 @@ help:
 	@echo "... src/util.o"
 	@echo "... src/util.i"
 	@echo "... src/util.s"
+	@echo "... tests/test_addr.o"
+	@echo "... tests/test_addr.i"
+	@echo "... tests/test_addr.s"
+	@echo "... tests/test_bytearray.o"
+	@echo "... tests/test_bytearray.i"
+	@echo "... tests/test_bytearray.s"
 	@echo "... tests/test_config.o"
 	@echo "... tests/test_config.i"
 	@echo "... tests/test_config.s"
@@ -844,6 +1033,9 @@ help:
 	@echo "... tests/test_scheduler.o"
 	@echo "... tests/test_scheduler.i"
 	@echo "... tests/test_scheduler.s"
+	@echo "... tests/test_socket.o"
+	@echo "... tests/test_socket.i"
+	@echo "... tests/test_socket.s"
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"

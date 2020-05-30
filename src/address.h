@@ -9,6 +9,8 @@
 #include <sys/un.h>
 #include <arpa/inet.h>
 #include <stddef.h>
+#include <vector>
+#include <map>
 
 namespace tadpole{
 
@@ -17,11 +19,28 @@ namespace tadpole{
  */
 class Address{
 public:
+	
 	/**
 	 * @brief 类型定义，智能指针
 	 */
 	typedef std::shared_ptr<Address> ptr;
 	
+	/**
+	 * @brief 域名转地址
+	 * @param[out] ips 保存地址的vector
+	 * @param[in] ipordns 需要转换的ip或dns
+	 * @param[in] service 服务类型，比如http
+	 */
+	static void Lookup(std::vector<Address::ptr> & ips,const char * ipordns, 
+										const char * service = 0);
+
+	/**
+	 * @brief 获得接口信息
+	 * @param[out] ips 用于保存本机上所有网卡ip地址
+	 */
+	static void LookupInterfaces(
+			std::multimap<std::string,Address::ptr> & ips);
+
 	/**
 	 * @brief 虚析构
 	 */
@@ -36,6 +55,11 @@ public:
 	 * @brief 获得该地址的结构
 	 */
 	virtual const sockaddr* getAddr()const = 0 ;
+
+	/**
+	 * @brief 可改的获得地址
+	 */
+	virtual sockaddr* getAddr() = 0 ;
 
 	/**
 	 * @brief 获得该地址结构的长度
@@ -68,6 +92,17 @@ public:
 	 */
 	typedef std::shared_ptr<IPAddress> ptr;
 
+	/**
+	 * @brief 根据地址结构创建不同的ip地址
+	 */
+	static IPAddress::ptr CreateByAddr(const sockaddr * addr , const socklen_t& len);
+	/**
+	 * @brief 根据ip地址创建ip地址
+	 * @param[in] ip 地址
+	 * @param[in] port 端口号
+	 */
+	static IPAddress::ptr Create(const char * ip , uint16_t port);
+	
 	/**
 	 * @brief 获得广播地址
 	 */
@@ -112,6 +147,12 @@ public:
 	IPv4Address(uint32_t ip = INADDR_ANY, uint16_t port = 0 );
 	
 	/**
+	 * @brief 构造函数
+	 * @param[in] addr ipv4地址结构
+	 * @param[in] len ipv4地址结构长度
+	 */
+	IPv4Address(const sockaddr * addr,const socklen_t& len);
+	/**
 	 * @brief 创建一个ipv4地址
 	 */
 	static IPv4Address::ptr Create(const char * ip , uint16_t port);
@@ -120,6 +161,7 @@ public:
 	 * @breif 以下实现父类的虚函数
 	 */
 	const sockaddr* getAddr()const override ;
+	sockaddr* getAddr()override;
 	socklen_t getAddrLen()const override ;
 	std::ostream & insert(std::ostream & os)override;
 	IPAddress::ptr getBroadcast(uint32_t prefix) override ;
@@ -151,8 +193,9 @@ public:
 	/**
 	 * @brief 构造函数
 	 * @param[in] addr ipv6地址结构
+	 * @param[in] len ipv6地址结构长度
 	 */
-	IPv6Address(const sockaddr_in6 & addr);
+	IPv6Address(const sockaddr * addr,const socklen_t & len);
 
 	/**
 	 * @brief 构造函数
@@ -172,6 +215,7 @@ public:
 	 * @brief 实现父类的虚函数
 	 */
 	const sockaddr* getAddr()const override ;
+	sockaddr* getAddr()override ;
 	socklen_t getAddrLen()const override ;
 	std::ostream & insert(std::ostream & os)override;
 	IPAddress::ptr getBroadcast(uint32_t prefix) override ;
@@ -206,9 +250,15 @@ public:
 	UnixAddress(const std::string & path);
 
 	/**
+	 * @brief 设置长度
+	 */
+	void setLen(int len){m_length = len;}
+
+	/**
 	 * @brief 实现父类的虚函数
 	 */
 	const sockaddr* getAddr()const override ;
+	sockaddr* getAddr()override ;
 	socklen_t getAddrLen()const override ;
 	std::ostream & insert(std::ostream & os)override;
 private:
@@ -237,6 +287,7 @@ public:
 	 * @brief 实现父类的虚函数 
 	 */
 	const sockaddr* getAddr()const override ;
+	sockaddr* getAddr()override ; 
 	socklen_t getAddrLen()const override ;
 	std::ostream & insert(std::ostream & os)override;
 private:

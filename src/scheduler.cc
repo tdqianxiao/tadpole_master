@@ -1,6 +1,7 @@
 #include "scheduler.h"
 #include "log.h"
 #include "macro.h"
+#include "hook.h"
 
 namespace tadpole{
 
@@ -34,7 +35,9 @@ Scheduler::Scheduler(uint32_t threadcount
 		m_rootThreadId = GetThreadId();
 
 		t_scheduler = this; 
+		set_hook_enable(true);
 	}else {
+		set_hook_enable(false);
 		m_rootThreadId = -1;
 	}						
 }
@@ -79,10 +82,13 @@ void Scheduler::stop(){
 }
 
 Scheduler::~Scheduler(){
+	//使用调用者线程
+	callerBegin();
 	t_scheduler = nullptr;
 }
 
 void Scheduler::run(){
+	set_hook_enable(true);
 	t_scheduler = this;
 
 	if(GetThreadId() != (uint32_t)m_rootThreadId){

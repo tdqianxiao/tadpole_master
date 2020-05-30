@@ -11,6 +11,9 @@
 
 static tadpole::Logger::ptr g_logger = TADPOLE_FIND_LOGGER("system");
 
+static tadpole::ConfigVar<uint32_t>::ptr s_connect_timeout = 
+		tadpole::Config::Lookup<uint32_t>("connect.timeout",5000,"connect fun timeout");
+
 namespace tadpole{
 
 static thread_local bool t_is_hook = false;
@@ -36,7 +39,7 @@ static thread_local bool t_is_hook = false;
     XX(fcntl) \
     XX(ioctl) \
     XX(getsockopt) \
-    XX(setsockopt)
+    XX(setsockopt) 
 
 void hook_init() {
     static bool is_inited = false;
@@ -83,7 +86,7 @@ struct timer_info{
 template <class OldFun , class ... Args>
 static ssize_t do_io(int fd , OldFun func ,const char * hook_fun_name ,
 			 uint32_t event , int timeout_so , Args&&... args){
-	TADPOLE_LOG_INFO(g_logger) << "do_io";
+//	TADPOLE_LOG_INFO(g_logger) << "do_io";
 	//没hook执行原函数
 	if(!tadpole::t_is_hook){
 		return func(fd,std::forward<Args>(args)...);
@@ -91,7 +94,7 @@ static ssize_t do_io(int fd , OldFun func ,const char * hook_fun_name ,
 	//保存该文件描述符的状态
 	tadpole::FdSts::ptr sts= tadpole::FdMgr::GetInstance()->get(fd);
 	if(!sts){
-		func(fd,std::forward<Args>(args)...);
+		return func(fd,std::forward<Args>(args)...);
 	}
 	
 	//如果关闭errno置为EBADF
@@ -132,7 +135,6 @@ retry:
                 iom->cancelEvent(fd, (tadpole::IOManager::Event)(event));
             }, winfo);
         }
-		
 		//添加事件,成功直接yieldtohold,失败退出吗,取消定时器,直接返回
         int rt = iom->addEvent(fd, (tadpole::IOManager::Event)(event));
         if(!rt) {
@@ -226,8 +228,80 @@ int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen){
 	return cfd;
 }
 
-int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen){
-	return connect_f(sockfd,addr,addrlen);
+//有延时的连接函数，非阻塞，要判断该文件描述符是否可写,延时可用配置文件写入
+int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen, uint64_t timeout_ms) {
+    if(!tadpole::t_is_hook) {
+        return connect_f(fd, addr, addrlen);
+    }
+    tadpole::FdSts::ptr sts = tadpole::FdMgr::GetInstance()->get(fd);
+    if(!sts || sts->isClose()) {
+        errno = EBADF;
+        return -1;
+    }
+
+    if(!sts->isSocket()) {
+        return connect_f(fd, addr, addrlen);
+    }
+
+    if(sts->getUserNonblock()) {
+        return connect_f(fd, addr, addrlen);
+    }
+
+    int n = connect_f(fd, addr, addrlen);
+    if(n == 0) {
+        return 0;
+    } else if(n != -1 || errno != EINPROGRESS) {
+        return n;
+    }
+
+    tadpole::IOManager* iom = tadpole::IOManager::GetCurIOM();
+    tadpole::Timer::ptr timer;
+    std::shared_ptr<timer_info> tinfo(new timer_info);
+    std::weak_ptr<timer_info> winfo(tinfo);
+
+    if(timeout_ms != (uint64_t)-1) {
+        timer = iom->addCondTimer(timeout_ms, [winfo, fd, iom]() {
+                auto t = winfo.lock();
+                if(!t || t->cancelled) {
+                    return;
+                }
+                t->cancelled = ETIMEDOUT;
+                iom->cancelEvent(fd, tadpole::IOManager::WRITE);
+        }, winfo);
+    }
+
+    int rt = iom->addEvent(fd, tadpole::IOManager::WRITE);
+    if(rt == 0) {
+        tadpole::Fiber::YieldToHold();
+        if(timer) {
+            timer->cancel();
+        }
+        if(tinfo->cancelled) {
+            errno = tinfo->cancelled;
+            return -1;
+        }
+    } else {
+        if(timer) {
+            timer->cancel();
+        }
+        TADPOLE_LOG_ERROR(g_logger) << "connect addEvent(" << fd << ", WRITE) error";
+    }
+
+    int error = 0;
+    socklen_t len = sizeof(int);
+    if(-1 == getsockopt(fd, SOL_SOCKET, SO_ERROR, &error, &len)) {
+        return -1;
+    }
+    if(!error) {
+        return 0;
+    } else {
+        errno = error;
+        return -1;
+    }
+}
+
+int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen) {
+    return connect_with_timeout(sockfd, addr, addrlen,s_connect_timeout->getValue());
 }
 
 ssize_t readv(int fd, const struct iovec *iov, int iovcnt){
@@ -273,7 +347,7 @@ ssize_t writev(int fd, const struct iovec *iov, int iovcnt){
 
 int close(int fd){
 	if(!tadpole::t_is_hook){
-		return close(fd);
+		return close_f(fd);
 	}
 	tadpole::FdSts::ptr sts = tadpole::FdMgr::GetInstance()->get(fd);
 	if(sts){
@@ -281,7 +355,7 @@ int close(int fd){
 		iom->cancelAllEvent(fd);
 		tadpole::FdMgr::GetInstance()->del(fd);
 	}
-	return close(fd);
+	return close_f(fd);
 }
 int fcntl(int fd, int cmd, ... ){
     va_list va;
