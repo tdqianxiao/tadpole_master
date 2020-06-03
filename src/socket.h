@@ -76,6 +76,19 @@ public:
 	 * @brief 获得套接字的写超时
 	 */
 	uint64_t getSendTimeout();
+	
+	/**
+	 * @brief 设置该文件描述符的读超时时间,是文件描述符多久没消息响应
+	 * @param[in] tmout 超时时间，毫秒
+	 */
+	void setRecvTimeout(uint64_t tmout);
+
+	
+	/**
+	 * @brief 设置该文件描述符的写超时时间,是文件描述符多久没消息响应
+	 * @param[in] tmout 超时时间，毫秒
+	 */
+	void setSendTimeout(uint64_t tmout);
 
 	/**
 	 * @brief 设置套接字的一些属性
@@ -145,33 +158,33 @@ public:
 		
 	/**
 	 * @brief 接收消息
-	 * @param[in] iov iov结构，里面保存者buf指针和长度
+	 * @param[in] iov iov数组结构，里面保存者buf指针和长度
 	 * @param[in] flag 标志位
 	 */
-	int recv(iovec *iov,int flag = 0 );
+	int recv(const std::vector<iovec>& iov,int flag = 0 );
 
 	/**
 	 * @brief udp 接收消息
-	 * @param[in] iov iov结构，里面保存者buf指针和长度
+	 * @param[in] iov iov数组结构，里面保存者buf指针和长度
 	 * @param[out] addr 用于保存对端的ip地址和端口
 	 * @param[in] flag 标志位
 	 */
-	int recvFrom(iovec *iov, Address::ptr addr , int flag = 0 );
+	int recvFrom(const std::vector<iovec>& iov, Address::ptr addr , int flag = 0 );
 
 	/**
 	 * @brief 发送消息
-	 * @param[in] iov iov结构，里面保存者buf指针和长度
+	 * @param[in] iov iov数组结构，里面保存者buf指针和长度
 	 * @param[in] flag 标志位
 	 */
-	int send(iovec *vec, int flags = 0);
+	int send(const std::vector<iovec> &vec, int flags = 0);
 
 	/**
 	 * @brief udp 发送消息
-	 * @param[in] iov iov结构，里面保存者buf指针和长度
+	 * @param[in] iov iov数组结构，里面保存者buf指针和长度
 	 * @param[in] addr 目标ip地址和端口
 	 * @param[in] flag 标志位
 	 */
-	int sendTo(iovec *vec, Address::ptr addr , int falgs = 0 );
+	int sendTo(const std::vector<iovec>& vec, Address::ptr addr , int falgs = 0 );
 
 	/**
 	 * @brief 关闭套接字

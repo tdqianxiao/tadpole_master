@@ -78,6 +78,20 @@ uint64_t Socket::getSendTimeout(){
 	return -1; 
 }
 
+void Socket::setRecvTimeout(uint64_t tmout){
+	FdSts::ptr sts = FdMgr::GetInstance()->get(m_sock);
+	if(sts){
+		sts->setTimeOut(SO_RCVTIMEO,tmout);
+	}
+}
+
+void Socket::setSendTimeout(uint64_t tmout){
+	FdSts::ptr sts = FdMgr::GetInstance()->get(m_sock);
+	if(sts){
+		sts->setTimeOut(SO_SNDTIMEO,tmout);
+	}
+}
+
 bool Socket::bind(Address::ptr addr){
 	if(isValid()){
 		TADPOLE_ASSERT(addr->getAddr()->sa_family == m_family);
@@ -156,20 +170,67 @@ int Socket::sendTo(void * buf , size_t len ,Address::ptr addr,int flags){
 	return ::sendto(m_sock,buf,len,flags,addr->getAddr(),addr->getAddrLen());
 }
 
-int Socket::recv(iovec *iov,int flag ){
-	return ::recv(m_sock,iov->iov_base,iov->iov_len,flag);
+int Socket::recv(const std::vector<iovec>& iov,int flag ){
+	int result = 0; 
+	for(auto &it : iov){
+		int ret = ::recv(m_sock,it.iov_base,it.iov_len,flag);
+		if(ret <= 0){
+			return ret;
+		}
+		result += ret; 
+		if((size_t)ret != it.iov_len){
+			break;
+		}
+	}
+	return result;
 }
 
-int Socket::recvFrom(iovec * iov, Address::ptr addr , int flag){
-	return recvfrom(m_sock,iov->iov_base,iov->iov_len,flag,addr->getAddr(),nullptr);
+int Socket::recvFrom(const std::vector<iovec>& iov, Address::ptr addr 
+					 ,int flag){
+	int result = 0; 
+	for(auto &it : iov){ 
+		int ret = ::recvfrom(m_sock,it.iov_base,it.iov_len,flag
+							,addr->getAddr(),nullptr);
+		if(ret <= 0){
+			return ret;
+		}
+		result += ret; 
+		if((size_t)ret != it.iov_len){
+			break;
+		}
+	}
+	return result;
 }
 
-int Socket::send(iovec * iov, int flags){
-	return ::send(m_sock,iov->iov_base,iov->iov_len,flags);
+int Socket::send(const std::vector<iovec>& iov, int flags){
+	int result = 0 ; 
+	for(auto &it : iov){
+		int ret = ::send(m_sock,it.iov_base,it.iov_len,flags);
+		if(ret < 0){
+			return ret;
+		}
+		result += ret; 
+		if((size_t)ret != it.iov_len){
+			break;
+		}
+	}
+	return result; 
 }
 
-int Socket::sendTo(iovec * iov,Address::ptr addr,int flags){
-	return ::sendto(m_sock,iov->iov_base,iov->iov_len,flags,addr->getAddr(),addr->getAddrLen());
+int Socket::sendTo(const std::vector<iovec>& iov,Address::ptr addr,int flags){
+	int result = 0 ; 
+	for(auto &it : iov){
+		int ret = ::sendto(m_sock,it.iov_base,it.iov_len,flags
+						   ,addr->getAddr(),addr->getAddrLen());
+		if(ret < 0){
+			return ret;
+		}
+		result += ret; 
+		if((size_t)ret != it.iov_len){
+			break;
+		}
+	}
+	return result;
 }
 
 Address::ptr Socket::getLocalAddress(){

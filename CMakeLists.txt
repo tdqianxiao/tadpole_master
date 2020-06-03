@@ -26,6 +26,9 @@ set(LIB_SRC
 	  src/address.cc
 	  src/socket.cc
 	  src/bytearray.cc
+	  src/tcpserver.cc
+	  src/http/http11_parser.cc
+	  src/http/httpclient_parser.cc
     )
 
 add_library(tadpole SHARED ${LIB_SRC})
@@ -51,6 +54,9 @@ tadpole_add_executable(test_hook "tests/test_hook.cc" tadpole "${LIBS}")
 tadpole_add_executable(test_addr "tests/test_addr.cc" tadpole "${LIBS}")
 tadpole_add_executable(test_socket "tests/test_socket.cc" tadpole "${LIBS}")
 tadpole_add_executable(test_bytearray "tests/test_bytearray.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_parser "tests/test_parser.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_tcpserver "tests/test_tcpserver.cc" tadpole "${LIBS}")
+tadpole_add_executable(echo_server "examples/echoServer.cc" tadpole "${LIBS}")
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

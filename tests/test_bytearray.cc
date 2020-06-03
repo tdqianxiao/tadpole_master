@@ -86,13 +86,10 @@ void fun(){
 	
 while(1){
 	vec.clear();
-	byte->getWriteBuffers(vec,4096);
-	TADPOLE_LOG_INFO(g_logger) <<"cap:" <<byte->getCapcity();
-	TADPOLE_LOG_INFO(g_logger) << "size:"<<byte->getSize();
-	int ret = cfd->recv(&vec[0]);
+	byte->getWriteBuffers(vec,1);
+	int ret = cfd->recv(vec);
 	if(ret > 0){
 		byte->setUsedCount(ret);
-		TADPOLE_LOG_INFO(g_logger) << "readpri:"<<byte->getSize();
 		vec.clear();
 		byte->getReadBuffers(vec,ret);
 		for(auto &it : vec){
@@ -100,9 +97,6 @@ while(1){
 		}
 		byte->freeReadBuffers();
 	}
-	TADPOLE_LOG_INFO(g_logger) <<"ret:"<<ret;
-	TADPOLE_LOG_INFO(g_logger) <<"cap:"<< byte->getCapcity();
-	TADPOLE_LOG_INFO(g_logger) << "size:"<<byte->getSize();
 }
 }
 

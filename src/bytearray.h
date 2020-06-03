@@ -199,6 +199,16 @@ public:
 	 * @brief 释放读完后的节点
 	 */
 	void freeReadBuffers();
+
+	std::string moveToString(size_t size){
+		std::vector<iovec> vec;
+		getReadBuffers(vec,size);
+		std::string str;
+		for(auto &it : vec){
+			str.append((char*)it.iov_base,it.iov_len);
+		}
+		return std::move(str);
+	}
 private:
 	//当前写位置
 	char * m_pos ;

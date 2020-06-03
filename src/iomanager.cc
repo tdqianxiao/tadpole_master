@@ -80,7 +80,7 @@ void IOManager::resizeFdsSize(int size){
 }
 
 IOManager::~IOManager(){
-	TADPOLE_LOG_DEBUG(g_logger)<< "~IOManager";
+//	TADPOLE_LOG_DEBUG(g_logger)<< "~IOManager";
 	std::vector<Timer::ptr> vec;
 	clearTimerToVec(vec);
 	for(auto &it : vec){
@@ -224,6 +224,9 @@ bool IOManager::cancelAllEvent(int fd){
 	
 	
 	EventHandle::MutexType::Lock lock2(fd_event->mutex);
+	if(!(fd_event->event & READ & WRITE)){
+		return true; 
+	}
 	int op = EPOLL_CTL_DEL;
 	int trievent = fd_event->event;
 	fd_event->event = NONE; 

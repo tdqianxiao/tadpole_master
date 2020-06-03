@@ -117,6 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named echo_server
+
+# Build rule for target.
+echo_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 echo_server
+.PHONY : echo_server
+
+# fast build rule for target.
+echo_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
+.PHONY : echo_server/fast
+
+#=============================================================================
+# Target rules for targets named test_tcpserver
+
+# Build rule for target.
+test_tcpserver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tcpserver
+.PHONY : test_tcpserver
+
+# fast build rule for target.
+test_tcpserver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/build
+.PHONY : test_tcpserver/fast
+
+#=============================================================================
 # Target rules for targets named test_bytearray
 
 # Build rule for target.
@@ -141,6 +167,19 @@ tadpole: cmake_check_build_system
 tadpole/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/build
 .PHONY : tadpole/fast
+
+#=============================================================================
+# Target rules for targets named test_parser
+
+# Build rule for target.
+test_parser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_parser
+.PHONY : test_parser
+
+# fast build rule for target.
+test_parser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/build
+.PHONY : test_parser/fast
 
 #=============================================================================
 # Target rules for targets named test_log
@@ -271,6 +310,33 @@ test_addr: cmake_check_build_system
 test_addr/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/build
 .PHONY : test_addr/fast
+
+examples/echoServer.o: examples/echoServer.cc.o
+
+.PHONY : examples/echoServer.o
+
+# target to build an object file
+examples/echoServer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echoServer.cc.o
+.PHONY : examples/echoServer.cc.o
+
+examples/echoServer.i: examples/echoServer.cc.i
+
+.PHONY : examples/echoServer.i
+
+# target to preprocess a source file
+examples/echoServer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echoServer.cc.i
+.PHONY : examples/echoServer.cc.i
+
+examples/echoServer.s: examples/echoServer.cc.s
+
+.PHONY : examples/echoServer.s
+
+# target to generate assembly for a file
+examples/echoServer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echoServer.cc.s
+.PHONY : examples/echoServer.cc.s
 
 src/address.o: src/address.cc.o
 
@@ -434,6 +500,60 @@ src/hook.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/hook.cc.s
 .PHONY : src/hook.cc.s
 
+src/http/http11_parser.o: src/http/http11_parser.cc.o
+
+.PHONY : src/http/http11_parser.o
+
+# target to build an object file
+src/http/http11_parser.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http11_parser.cc.o
+.PHONY : src/http/http11_parser.cc.o
+
+src/http/http11_parser.i: src/http/http11_parser.cc.i
+
+.PHONY : src/http/http11_parser.i
+
+# target to preprocess a source file
+src/http/http11_parser.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http11_parser.cc.i
+.PHONY : src/http/http11_parser.cc.i
+
+src/http/http11_parser.s: src/http/http11_parser.cc.s
+
+.PHONY : src/http/http11_parser.s
+
+# target to generate assembly for a file
+src/http/http11_parser.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http11_parser.cc.s
+.PHONY : src/http/http11_parser.cc.s
+
+src/http/httpclient_parser.o: src/http/httpclient_parser.cc.o
+
+.PHONY : src/http/httpclient_parser.o
+
+# target to build an object file
+src/http/httpclient_parser.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/httpclient_parser.cc.o
+.PHONY : src/http/httpclient_parser.cc.o
+
+src/http/httpclient_parser.i: src/http/httpclient_parser.cc.i
+
+.PHONY : src/http/httpclient_parser.i
+
+# target to preprocess a source file
+src/http/httpclient_parser.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/httpclient_parser.cc.i
+.PHONY : src/http/httpclient_parser.cc.i
+
+src/http/httpclient_parser.s: src/http/httpclient_parser.cc.s
+
+.PHONY : src/http/httpclient_parser.s
+
+# target to generate assembly for a file
+src/http/httpclient_parser.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/httpclient_parser.cc.s
+.PHONY : src/http/httpclient_parser.cc.s
+
 src/iomanager.o: src/iomanager.cc.o
 
 .PHONY : src/iomanager.o
@@ -568,6 +688,33 @@ src/socket.s: src/socket.cc.s
 src/socket.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/socket.cc.s
 .PHONY : src/socket.cc.s
+
+src/tcpserver.o: src/tcpserver.cc.o
+
+.PHONY : src/tcpserver.o
+
+# target to build an object file
+src/tcpserver.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/tcpserver.cc.o
+.PHONY : src/tcpserver.cc.o
+
+src/tcpserver.i: src/tcpserver.cc.i
+
+.PHONY : src/tcpserver.i
+
+# target to preprocess a source file
+src/tcpserver.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/tcpserver.cc.i
+.PHONY : src/tcpserver.cc.i
+
+src/tcpserver.s: src/tcpserver.cc.s
+
+.PHONY : src/tcpserver.s
+
+# target to generate assembly for a file
+src/tcpserver.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/tcpserver.cc.s
+.PHONY : src/tcpserver.cc.s
 
 src/thread.o: src/thread.cc.o
 
@@ -839,6 +986,33 @@ tests/test_log.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/tests/test_log.cc.s
 .PHONY : tests/test_log.cc.s
 
+tests/test_parser.o: tests/test_parser.cc.o
+
+.PHONY : tests/test_parser.o
+
+# target to build an object file
+tests/test_parser.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/tests/test_parser.cc.o
+.PHONY : tests/test_parser.cc.o
+
+tests/test_parser.i: tests/test_parser.cc.i
+
+.PHONY : tests/test_parser.i
+
+# target to preprocess a source file
+tests/test_parser.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/tests/test_parser.cc.i
+.PHONY : tests/test_parser.cc.i
+
+tests/test_parser.s: tests/test_parser.cc.s
+
+.PHONY : tests/test_parser.s
+
+# target to generate assembly for a file
+tests/test_parser.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/tests/test_parser.cc.s
+.PHONY : tests/test_parser.cc.s
+
 tests/test_scheduler.o: tests/test_scheduler.cc.o
 
 .PHONY : tests/test_scheduler.o
@@ -892,6 +1066,33 @@ tests/test_socket.s: tests/test_socket.cc.s
 tests/test_socket.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/tests/test_socket.cc.s
 .PHONY : tests/test_socket.cc.s
+
+tests/test_tcpserver.o: tests/test_tcpserver.cc.o
+
+.PHONY : tests/test_tcpserver.o
+
+# target to build an object file
+tests/test_tcpserver.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cc.o
+.PHONY : tests/test_tcpserver.cc.o
+
+tests/test_tcpserver.i: tests/test_tcpserver.cc.i
+
+.PHONY : tests/test_tcpserver.i
+
+# target to preprocess a source file
+tests/test_tcpserver.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cc.i
+.PHONY : tests/test_tcpserver.cc.i
+
+tests/test_tcpserver.s: tests/test_tcpserver.cc.s
+
+.PHONY : tests/test_tcpserver.s
+
+# target to generate assembly for a file
+tests/test_tcpserver.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cc.s
+.PHONY : tests/test_tcpserver.cc.s
 
 tests/test_thread.o: tests/test_thread.cc.o
 
@@ -953,9 +1154,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... echo_server"
+	@echo "... test_tcpserver"
 	@echo "... test_bytearray"
 	@echo "... edit_cache"
 	@echo "... tadpole"
+	@echo "... test_parser"
 	@echo "... test_log"
 	@echo "... test_hook"
 	@echo "... test_config"
@@ -967,6 +1171,9 @@ help:
 	@echo "... test_scheduler"
 	@echo "... test_iomanager"
 	@echo "... test_addr"
+	@echo "... examples/echoServer.o"
+	@echo "... examples/echoServer.i"
+	@echo "... examples/echoServer.s"
 	@echo "... src/address.o"
 	@echo "... src/address.i"
 	@echo "... src/address.s"
@@ -985,6 +1192,12 @@ help:
 	@echo "... src/hook.o"
 	@echo "... src/hook.i"
 	@echo "... src/hook.s"
+	@echo "... src/http/http11_parser.o"
+	@echo "... src/http/http11_parser.i"
+	@echo "... src/http/http11_parser.s"
+	@echo "... src/http/httpclient_parser.o"
+	@echo "... src/http/httpclient_parser.i"
+	@echo "... src/http/httpclient_parser.s"
 	@echo "... src/iomanager.o"
 	@echo "... src/iomanager.i"
 	@echo "... src/iomanager.s"
@@ -1000,6 +1213,9 @@ help:
 	@echo "... src/socket.o"
 	@echo "... src/socket.i"
 	@echo "... src/socket.s"
+	@echo "... src/tcpserver.o"
+	@echo "... src/tcpserver.i"
+	@echo "... src/tcpserver.s"
 	@echo "... src/thread.o"
 	@echo "... src/thread.i"
 	@echo "... src/thread.s"
@@ -1030,12 +1246,18 @@ help:
 	@echo "... tests/test_log.o"
 	@echo "... tests/test_log.i"
 	@echo "... tests/test_log.s"
+	@echo "... tests/test_parser.o"
+	@echo "... tests/test_parser.i"
+	@echo "... tests/test_parser.s"
 	@echo "... tests/test_scheduler.o"
 	@echo "... tests/test_scheduler.i"
 	@echo "... tests/test_scheduler.s"
 	@echo "... tests/test_socket.o"
 	@echo "... tests/test_socket.i"
 	@echo "... tests/test_socket.s"
+	@echo "... tests/test_tcpserver.o"
+	@echo "... tests/test_tcpserver.i"
+	@echo "... tests/test_tcpserver.s"
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"

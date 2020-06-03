@@ -1,91 +1,1540 @@
-2020-05-30 20:13:09	1947	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12676:5]	cap:4096
-2020-05-30 20:13:09	1947	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12676:5]	size:0
-2020-05-30 20:13:11	3987	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12674:5]	readpri:12
-2020-05-30 20:13:11	3988	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12674:5]	fhidosahfida
-2020-05-30 20:13:11	3988	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12674:5]	ret:12
-2020-05-30 20:13:11	3988	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12674:5]	cap:4084
-2020-05-30 20:13:11	3988	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12674:5]	size:0
-2020-05-30 20:13:11	3988	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12674:5]	cap:8180
-2020-05-30 20:13:11	3988	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12674:5]	size:0
-2020-05-30 20:13:13	5492	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12675:5]	readpri:19
-2020-05-30 20:13:13	5492	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12675:5]	fdoaifhdsOIdshaiofa
-2020-05-30 20:13:13	5492	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12675:5]	ret:19
-2020-05-30 20:13:13	5493	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12675:5]	cap:8161
-2020-05-30 20:13:13	5493	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12675:5]	size:0
-2020-05-30 20:13:13	5493	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12675:5]	cap:8161
-2020-05-30 20:13:13	5493	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12675:5]	size:0
-2020-05-30 20:13:14	7077	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12674:5]	readpri:24
-2020-05-30 20:13:14	7077	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12674:5]	fsoaifhdaiohfdioafhdsaio
-2020-05-30 20:13:14	7077	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12674:5]	ret:24
-2020-05-30 20:13:14	7077	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12674:5]	cap:8137
-2020-05-30 20:13:14	7077	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12674:5]	size:0
-2020-05-30 20:13:14	7077	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12674:5]	cap:8137
-2020-05-30 20:13:14	7077	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12674:5]	size:0
-2020-05-30 20:13:16	9004	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12675:5]	readpri:23
-2020-05-30 20:13:16	9004	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12675:5]	fdsaiohfdsaoihfsaiodfhi
-2020-05-30 20:13:16	9004	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12675:5]	ret:23
-2020-05-30 20:13:16	9004	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12675:5]	cap:8114
-2020-05-30 20:13:16	9004	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12675:5]	size:0
-2020-05-30 20:13:16	9004	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12675:5]	cap:8114
-2020-05-30 20:13:16	9004	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12675:5]	size:0
-2020-05-30 20:13:31	23892	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12675:5]	readpri:53
-2020-05-30 20:13:31	23892	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12675:5]	dsafhosahiofhsdaiofhasofyhoiayweoipqtytpiowqytefqoigf
-2020-05-30 20:13:31	23892	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12675:5]	ret:53
-2020-05-30 20:13:31	23892	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12675:5]	cap:8061
-2020-05-30 20:13:31	23892	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12675:5]	size:0
-2020-05-30 20:13:31	23892	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12675:5]	cap:8061
-2020-05-30 20:13:31	23892	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12675:5]	size:0
-2020-05-30 20:13:35	27509	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12675:5]	readpri:60
-2020-05-30 20:13:35	27509	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12675:5]	sdfoasdyfsioapydsvahidvihpooxoziooohcvoixzhfdoisayfoiayweoif
-2020-05-30 20:13:35	27509	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12675:5]	ret:60
-2020-05-30 20:13:35	27509	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12675:5]	cap:8001
-2020-05-30 20:13:35	27509	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12675:5]	size:0
-2020-05-30 20:13:35	27509	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12675:5]	cap:8001
-2020-05-30 20:13:35	27509	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12675:5]	size:0
-2020-05-30 20:13:39	31900	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12674:5]	readpri:81
-2020-05-30 20:13:39	31900	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12674:5]	foshaopifdhaiofidsayfdoaidyfsayiofoiisdfyiodfdsioysdfyiofsdiopyyiopsdfiopysdfyiop
-2020-05-30 20:13:39	31900	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12674:5]	ret:81
-2020-05-30 20:13:39	31900	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12674:5]	cap:7920
-2020-05-30 20:13:39	31900	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12674:5]	size:0
-2020-05-30 20:13:39	31900	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12674:5]	cap:7920
-2020-05-30 20:13:39	31900	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12674:5]	size:0
-2020-05-30 20:13:41	33828	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12676:5]	readpri:13
-2020-05-30 20:13:41	33828	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12676:5]	sfdyoayfdsoia
-2020-05-30 20:13:41	33828	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12676:5]	ret:13
-2020-05-30 20:13:41	33828	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12676:5]	cap:7907
-2020-05-30 20:13:41	33828	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12676:5]	size:0
-2020-05-30 20:13:41	33828	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12676:5]	cap:7907
-2020-05-30 20:13:41	33828	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12676:5]	size:0
-2020-05-30 20:14:01	54003	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12675:5]	readpri:23
-2020-05-30 20:14:01	54003	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12675:5]	GET/HETOOPodiyasofyh\0
-2020-05-30 20:14:01	54003	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12675:5]	ret:23
-2020-05-30 20:14:01	54003	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12675:5]	cap:7884
-2020-05-30 20:14:01	54003	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12675:5]	size:0
-2020-05-30 20:14:01	54004	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12675:5]	cap:7884
-2020-05-30 20:14:01	54004	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12675:5]	size:0
-2020-05-30 20:15:20	132740	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12673:5]	readpri:12
-2020-05-30 20:15:20	132740	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12673:5]	sdfposdjfpoa
-2020-05-30 20:15:20	132740	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12673:5]	ret:12
-2020-05-30 20:15:20	132740	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12673:5]	cap:7872
-2020-05-30 20:15:20	132740	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12673:5]	size:0
-2020-05-30 20:15:20	132740	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12673:5]	cap:7872
-2020-05-30 20:15:20	132740	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12673:5]	size:0
-2020-05-30 20:15:22	134876	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12673:5]	readpri:6
-2020-05-30 20:15:22	134876	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12673:5]	hadoop
-2020-05-30 20:15:22	134876	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12673:5]	ret:6
-2020-05-30 20:15:22	134876	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12673:5]	cap:7866
-2020-05-30 20:15:22	134876	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12673:5]	size:0
-2020-05-30 20:15:22	134876	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12673:5]	cap:7866
-2020-05-30 20:15:22	134876	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12673:5]	size:0
-2020-05-30 20:15:29	141733	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12674:5]	readpri:15
-2020-05-30 20:15:29	141733	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12674:5]	hfoahdfoiasdfdd
-2020-05-30 20:15:29	141733	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12674:5]	ret:15
-2020-05-30 20:15:29	141733	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12674:5]	cap:7851
-2020-05-30 20:15:29	141733	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12674:5]	size:0
-2020-05-30 20:15:29	141733	[root]	[INFO]	[tests/test_bytearray.cc:90]	[12674:5]	cap:7851
-2020-05-30 20:15:29	141733	[root]	[INFO]	[tests/test_bytearray.cc:91]	[12674:5]	size:0
-2020-05-30 20:15:31	143628	[root]	[INFO]	[tests/test_bytearray.cc:95]	[12675:5]	readpri:11
-2020-05-30 20:15:31	143628	[root]	[INFO]	[tests/test_bytearray.cc:99]	[12675:5]	fhdifhoidhs
-2020-05-30 20:15:31	143628	[root]	[INFO]	[tests/test_bytearray.cc:103]	[12675:5]	ret:11
-2020-05-30 20:15:31	143628	[root]	[INFO]	[tests/test_bytearray.cc:104]	[12675:5]	cap:7840
-2020-05-30 20:15:31	143628	[root]	[INFO]	[tests/test_bytearray.cc:105]	[12675:5]	size:0
+2020-06-03 19:09:08	40245	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:6]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:08	40246	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:7]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:08	40247	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:8]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:08	40247	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:9]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:08	40248	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:10]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:08	40249	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:11]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:08	40249	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:12]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:08	40251	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:13]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:08	40252	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:14]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:08	40252	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:15]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52746	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:16]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52747	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:17]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52748	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:18]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52749	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:19]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52749	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:20]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52752	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:21]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52753	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:22]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52754	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:23]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52754	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:24]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52755	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:25]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52913	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:26]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52914	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:27]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52914	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:28]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52915	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:29]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52915	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:30]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52916	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:31]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52917	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:32]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52917	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:33]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52920	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:34]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	52921	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:35]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53077	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:36]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53077	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:37]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53078	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:38]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53079	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:39]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53079	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:40]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53081	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:41]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53082	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:42]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53082	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:43]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53083	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:44]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53083	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:45]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53314	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:46]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53314	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:47]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53315	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:48]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53316	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:49]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53317	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:50]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53319	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:51]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53320	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:52]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53321	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:53]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53322	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:54]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53322	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:55]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53472	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:56]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53473	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:57]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53474	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:58]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53475	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:59]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53475	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:60]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53478	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:61]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53479	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:62]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53480	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:63]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53480	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:64]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:21	53481	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:65]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53625	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:66]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53625	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:67]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53626	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:68]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53627	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:69]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53628	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:70]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53630	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:71]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53631	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:72]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53631	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:73]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53632	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:74]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53633	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:75]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53802	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:76]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53802	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:77]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53803	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:78]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53804	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:79]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53804	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:80]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53807	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:81]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53807	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:82]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53808	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:83]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53809	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:84]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53810	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:85]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53969	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:86]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53970	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:87]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53970	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:88]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53971	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:89]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53971	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:90]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53973	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:91]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53974	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:92]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53975	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:93]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53976	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:94]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	53977	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:95]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54137	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:96]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54137	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:97]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54138	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:98]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54139	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:99]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54140	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:100]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54142	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:101]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54144	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:102]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54144	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:103]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54145	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:104]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54146	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:105]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54321	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:106]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54322	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:107]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54323	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:108]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54324	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:109]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54325	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:110]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54326	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:111]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54327	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:112]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54328	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:113]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54329	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:114]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54330	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:115]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54485	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:116]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54485	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:117]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54486	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:118]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54487	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:119]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54490	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:120]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54491	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:121]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54492	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:122]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54493	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:123]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54494	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:124]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:22	54495	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:125]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54640	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:126]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54641	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:127]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54642	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:128]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54642	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:129]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54643	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:130]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54644	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:131]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54644	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:132]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54647	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:133]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54648	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:134]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54649	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:135]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54824	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:136]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54825	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:137]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54826	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:138]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54827	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:139]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54830	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:140]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54830	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:141]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54831	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:142]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54832	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:143]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54832	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:144]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	54833	[root]	[INFO]	[examples/echoServer.cc:30]	[13858:145]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55019	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:146]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55019	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:147]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55020	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:148]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55022	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:149]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55023	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:150]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55024	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:151]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55025	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:152]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55025	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:153]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55026	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:154]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55027	[root]	[INFO]	[examples/echoServer.cc:30]	[13857:155]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55192	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:156]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55193	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:157]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55194	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:158]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+2020-06-03 19:09:23	55194	[root]	[INFO]	[examples/echoServer.cc:30]	[13856:159]	GET / HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
