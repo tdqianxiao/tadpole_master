@@ -1,6 +1,6 @@
-#include "hook.h"
-#include "iomanager.h"
-#include "log.h"
+#include "src/hook.h"
+#include "src/iomanager.h"
+#include "src/log.h"
 
 #include <string.h>
 #include <fcntl.h>
@@ -110,8 +110,8 @@ bool IOManager::addEvent(int fd, Event event,std::function<void()> cb){
 	
 	EventHandle::MutexType::Lock lock2(fd_event->mutex);
 	int op = (fd_event->event & NONE) ? EPOLL_CTL_MOD : EPOLL_CTL_ADD;
-	int events = EPOLLET | fd_event->event | event;
-	fd_event->event = (Event)events; 
+	fd_event->event = (Event)(fd_event->event | event); 
+	int events = EPOLLET | fd_event->event;
 	lock2.unlock();
 	
 	epoll_event env ; 
@@ -193,6 +193,10 @@ bool IOManager::cancelEvent(int fd , Event event){
 	
 	
 	EventHandle::MutexType::Lock lock2(fd_event->mutex);
+	//TADPOLE_LOG_INFO(g_logger) << fd_event->event;
+	if(!(fd_event->event & (READ|WRITE))){
+		return false;
+	}
 	int op = (fd_event->event & ~event & ~EPOLLET) ? EPOLL_CTL_MOD : EPOLL_CTL_DEL;
 	int events = fd_event->event & ~event;
 	fd_event->event = (Event)events; 
@@ -224,8 +228,8 @@ bool IOManager::cancelAllEvent(int fd){
 	
 	
 	EventHandle::MutexType::Lock lock2(fd_event->mutex);
-	if(!(fd_event->event & READ & WRITE)){
-		return true; 
+	if(!(fd_event->event & (READ|WRITE))){
+		return false; 
 	}
 	int op = EPOLL_CTL_DEL;
 	int trievent = fd_event->event;

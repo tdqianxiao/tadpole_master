@@ -1,10 +1,14 @@
 #ifndef __TADPOLE_SOCKET_H__
 #define __TADPOLE_SOCKET_H__
 
-#include "address.h"
+#include "src/address.h"
+#include "src/bytearray.h"
+
+#include <vector>
 
 namespace tadpole{
 
+class ByteArray;
 /**
  * @brief 套接字类
  */
@@ -148,6 +152,11 @@ public:
 	int send(void * buf , size_t len , int flags = 0);
 
 	/**
+	 * @brief tcp发送,从字节数组里面读数据发送
+	 */
+	int sendFrom(ByteArray::ptr ba , size_t size);
+
+	/**
 	 * @brief udp 发送消息
 	 * @param[in] buf 缓冲区
 	 * @param[in] len buf长度
@@ -155,13 +164,18 @@ public:
 	 * @param[in] flag 标志位
 	 */
 	int sendTo(void * buf , size_t len , Address::ptr addr , int falgs = 0 );
-		
+
 	/**
 	 * @brief 接收消息
 	 * @param[in] iov iov数组结构，里面保存者buf指针和长度
 	 * @param[in] flag 标志位
 	 */
 	int recv(const std::vector<iovec>& iov,int flag = 0 );
+
+	/**
+	 * @brief 接收消息到byteArray里面去 
+	 */
+	int recvTo(std::shared_ptr<ByteArray> ba,size_t size = 1024);
 
 	/**
 	 * @brief udp 接收消息
@@ -199,6 +213,11 @@ public:
 	 * @brief 获得对端套接字的地址
 	 */
 	Address::ptr getRemoteAddress();
+	
+	/**
+	 * @brief 获得原始socket
+	 */
+	int getSocket()const {return m_sock;}
 private:
 	/**
 	 * @brief 构造函数，给accept用

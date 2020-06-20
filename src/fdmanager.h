@@ -4,8 +4,8 @@
 #include <vector>
 #include <memory>
 
-#include "mutex.h"
-#include "singleton.h"
+#include "src/mutex.h"
+#include "src/singleton.h"
 namespace tadpole{
 
 /**

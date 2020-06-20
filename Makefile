@@ -62,17 +62,6 @@ CMAKE_BINARY_DIR = /root/project/tadpole_master
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -83,6 +72,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -117,147 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named echo_server
+# Target rules for targets named test_scheduler
 
 # Build rule for target.
-echo_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 echo_server
-.PHONY : echo_server
+test_scheduler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_scheduler
+.PHONY : test_scheduler
 
 # fast build rule for target.
-echo_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
-.PHONY : echo_server/fast
-
-#=============================================================================
-# Target rules for targets named test_tcpserver
-
-# Build rule for target.
-test_tcpserver: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tcpserver
-.PHONY : test_tcpserver
-
-# fast build rule for target.
-test_tcpserver/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/build
-.PHONY : test_tcpserver/fast
-
-#=============================================================================
-# Target rules for targets named test_bytearray
-
-# Build rule for target.
-test_bytearray: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_bytearray
-.PHONY : test_bytearray
-
-# fast build rule for target.
-test_bytearray/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/build
-.PHONY : test_bytearray/fast
-
-#=============================================================================
-# Target rules for targets named tadpole
-
-# Build rule for target.
-tadpole: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tadpole
-.PHONY : tadpole
-
-# fast build rule for target.
-tadpole/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/build
-.PHONY : tadpole/fast
-
-#=============================================================================
-# Target rules for targets named test_parser
-
-# Build rule for target.
-test_parser: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_parser
-.PHONY : test_parser
-
-# fast build rule for target.
-test_parser/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/build
-.PHONY : test_parser/fast
-
-#=============================================================================
-# Target rules for targets named test_log
-
-# Build rule for target.
-test_log: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_log
-.PHONY : test_log
-
-# fast build rule for target.
-test_log/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/build
-.PHONY : test_log/fast
-
-#=============================================================================
-# Target rules for targets named test_hook
-
-# Build rule for target.
-test_hook: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hook
-.PHONY : test_hook
-
-# fast build rule for target.
-test_hook/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
-.PHONY : test_hook/fast
-
-#=============================================================================
-# Target rules for targets named test_config
-
-# Build rule for target.
-test_config: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_config
-.PHONY : test_config
-
-# fast build rule for target.
-test_config/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
-.PHONY : test_config/fast
-
-#=============================================================================
-# Target rules for targets named test_socket
-
-# Build rule for target.
-test_socket: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_socket
-.PHONY : test_socket
-
-# fast build rule for target.
-test_socket/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
-.PHONY : test_socket/fast
-
-#=============================================================================
-# Target rules for targets named test_yaml
-
-# Build rule for target.
-test_yaml: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_yaml
-.PHONY : test_yaml
-
-# fast build rule for target.
-test_yaml/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_yaml.dir/build.make CMakeFiles/test_yaml.dir/build
-.PHONY : test_yaml/fast
-
-#=============================================================================
-# Target rules for targets named test_thread
-
-# Build rule for target.
-test_thread: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_thread
-.PHONY : test_thread
-
-# fast build rule for target.
-test_thread/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
-.PHONY : test_thread/fast
+test_scheduler/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
+.PHONY : test_scheduler/fast
 
 #=============================================================================
 # Target rules for targets named test_fiber
@@ -273,17 +143,225 @@ test_fiber/fast:
 .PHONY : test_fiber/fast
 
 #=============================================================================
-# Target rules for targets named test_scheduler
+# Target rules for targets named test_httpserver
 
 # Build rule for target.
-test_scheduler: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_scheduler
-.PHONY : test_scheduler
+test_httpserver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_httpserver
+.PHONY : test_httpserver
 
 # fast build rule for target.
-test_scheduler/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
-.PHONY : test_scheduler/fast
+test_httpserver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/build
+.PHONY : test_httpserver/fast
+
+#=============================================================================
+# Target rules for targets named test_thread
+
+# Build rule for target.
+test_thread: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_thread
+.PHONY : test_thread
+
+# fast build rule for target.
+test_thread/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
+.PHONY : test_thread/fast
+
+#=============================================================================
+# Target rules for targets named test_yaml
+
+# Build rule for target.
+test_yaml: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_yaml
+.PHONY : test_yaml
+
+# fast build rule for target.
+test_yaml/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_yaml.dir/build.make CMakeFiles/test_yaml.dir/build
+.PHONY : test_yaml/fast
+
+#=============================================================================
+# Target rules for targets named test_socket
+
+# Build rule for target.
+test_socket: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_socket
+.PHONY : test_socket
+
+# fast build rule for target.
+test_socket/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
+.PHONY : test_socket/fast
+
+#=============================================================================
+# Target rules for targets named test_config
+
+# Build rule for target.
+test_config: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_config
+.PHONY : test_config
+
+# fast build rule for target.
+test_config/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
+.PHONY : test_config/fast
+
+#=============================================================================
+# Target rules for targets named test_httpsession
+
+# Build rule for target.
+test_httpsession: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_httpsession
+.PHONY : test_httpsession
+
+# fast build rule for target.
+test_httpsession/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpsession.dir/build.make CMakeFiles/test_httpsession.dir/build
+.PHONY : test_httpsession/fast
+
+#=============================================================================
+# Target rules for targets named test_log
+
+# Build rule for target.
+test_log: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_log
+.PHONY : test_log
+
+# fast build rule for target.
+test_log/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/build
+.PHONY : test_log/fast
+
+#=============================================================================
+# Target rules for targets named test_parser
+
+# Build rule for target.
+test_parser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_parser
+.PHONY : test_parser
+
+# fast build rule for target.
+test_parser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/build
+.PHONY : test_parser/fast
+
+#=============================================================================
+# Target rules for targets named test_addr
+
+# Build rule for target.
+test_addr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_addr
+.PHONY : test_addr
+
+# fast build rule for target.
+test_addr/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/build
+.PHONY : test_addr/fast
+
+#=============================================================================
+# Target rules for targets named tadpole
+
+# Build rule for target.
+tadpole: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tadpole
+.PHONY : tadpole
+
+# fast build rule for target.
+tadpole/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/build
+.PHONY : tadpole/fast
+
+#=============================================================================
+# Target rules for targets named test_bytearray
+
+# Build rule for target.
+test_bytearray: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_bytearray
+.PHONY : test_bytearray
+
+# fast build rule for target.
+test_bytearray/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/build
+.PHONY : test_bytearray/fast
+
+#=============================================================================
+# Target rules for targets named test_hook
+
+# Build rule for target.
+test_hook: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hook
+.PHONY : test_hook
+
+# fast build rule for target.
+test_hook/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
+.PHONY : test_hook/fast
+
+#=============================================================================
+# Target rules for targets named test_tcpserver
+
+# Build rule for target.
+test_tcpserver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tcpserver
+.PHONY : test_tcpserver
+
+# fast build rule for target.
+test_tcpserver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/build
+.PHONY : test_tcpserver/fast
+
+#=============================================================================
+# Target rules for targets named echo_server
+
+# Build rule for target.
+echo_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 echo_server
+.PHONY : echo_server
+
+# fast build rule for target.
+echo_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
+.PHONY : echo_server/fast
+
+#=============================================================================
+# Target rules for targets named test_httprequest
+
+# Build rule for target.
+test_httprequest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_httprequest
+.PHONY : test_httprequest
+
+# fast build rule for target.
+test_httprequest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httprequest.dir/build.make CMakeFiles/test_httprequest.dir/build
+.PHONY : test_httprequest/fast
+
+#=============================================================================
+# Target rules for targets named test_httpresponce
+
+# Build rule for target.
+test_httpresponce: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_httpresponce
+.PHONY : test_httpresponce
+
+# fast build rule for target.
+test_httpresponce/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpresponce.dir/build.make CMakeFiles/test_httpresponce.dir/build
+.PHONY : test_httpresponce/fast
+
+#=============================================================================
+# Target rules for targets named test_random
+
+# Build rule for target.
+test_random: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_random
+.PHONY : test_random
+
+# fast build rule for target.
+test_random/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_random.dir/build.make CMakeFiles/test_random.dir/build
+.PHONY : test_random/fast
 
 #=============================================================================
 # Target rules for targets named test_iomanager
@@ -299,17 +377,152 @@ test_iomanager/fast:
 .PHONY : test_iomanager/fast
 
 #=============================================================================
-# Target rules for targets named test_addr
+# Target rules for targets named fl_server
 
 # Build rule for target.
-test_addr: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_addr
-.PHONY : test_addr
+fl_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fl_server
+.PHONY : fl_server
 
 # fast build rule for target.
-test_addr/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/build
-.PHONY : test_addr/fast
+fl_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fl_server.dir/build.make CMakeFiles/fl_server.dir/build
+.PHONY : fl_server/fast
+
+examples/FLServer.o: examples/FLServer.cc.o
+
+.PHONY : examples/FLServer.o
+
+# target to build an object file
+examples/FLServer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fl_server.dir/build.make CMakeFiles/fl_server.dir/examples/FLServer.cc.o
+.PHONY : examples/FLServer.cc.o
+
+examples/FLServer.i: examples/FLServer.cc.i
+
+.PHONY : examples/FLServer.i
+
+# target to preprocess a source file
+examples/FLServer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fl_server.dir/build.make CMakeFiles/fl_server.dir/examples/FLServer.cc.i
+.PHONY : examples/FLServer.cc.i
+
+examples/FLServer.s: examples/FLServer.cc.s
+
+.PHONY : examples/FLServer.s
+
+# target to generate assembly for a file
+examples/FLServer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fl_server.dir/build.make CMakeFiles/fl_server.dir/examples/FLServer.cc.s
+.PHONY : examples/FLServer.cc.s
+
+examples/FightLandlord/Random.o: examples/FightLandlord/Random.cc.o
+
+.PHONY : examples/FightLandlord/Random.o
+
+# target to build an object file
+examples/FightLandlord/Random.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/Random.cc.o
+.PHONY : examples/FightLandlord/Random.cc.o
+
+examples/FightLandlord/Random.i: examples/FightLandlord/Random.cc.i
+
+.PHONY : examples/FightLandlord/Random.i
+
+# target to preprocess a source file
+examples/FightLandlord/Random.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/Random.cc.i
+.PHONY : examples/FightLandlord/Random.cc.i
+
+examples/FightLandlord/Random.s: examples/FightLandlord/Random.cc.s
+
+.PHONY : examples/FightLandlord/Random.s
+
+# target to generate assembly for a file
+examples/FightLandlord/Random.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/Random.cc.s
+.PHONY : examples/FightLandlord/Random.cc.s
+
+examples/FightLandlord/Room.o: examples/FightLandlord/Room.cc.o
+
+.PHONY : examples/FightLandlord/Room.o
+
+# target to build an object file
+examples/FightLandlord/Room.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/Room.cc.o
+.PHONY : examples/FightLandlord/Room.cc.o
+
+examples/FightLandlord/Room.i: examples/FightLandlord/Room.cc.i
+
+.PHONY : examples/FightLandlord/Room.i
+
+# target to preprocess a source file
+examples/FightLandlord/Room.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/Room.cc.i
+.PHONY : examples/FightLandlord/Room.cc.i
+
+examples/FightLandlord/Room.s: examples/FightLandlord/Room.cc.s
+
+.PHONY : examples/FightLandlord/Room.s
+
+# target to generate assembly for a file
+examples/FightLandlord/Room.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/Room.cc.s
+.PHONY : examples/FightLandlord/Room.cc.s
+
+examples/FightLandlord/protocal.o: examples/FightLandlord/protocal.cc.o
+
+.PHONY : examples/FightLandlord/protocal.o
+
+# target to build an object file
+examples/FightLandlord/protocal.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/protocal.cc.o
+.PHONY : examples/FightLandlord/protocal.cc.o
+
+examples/FightLandlord/protocal.i: examples/FightLandlord/protocal.cc.i
+
+.PHONY : examples/FightLandlord/protocal.i
+
+# target to preprocess a source file
+examples/FightLandlord/protocal.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/protocal.cc.i
+.PHONY : examples/FightLandlord/protocal.cc.i
+
+examples/FightLandlord/protocal.s: examples/FightLandlord/protocal.cc.s
+
+.PHONY : examples/FightLandlord/protocal.s
+
+# target to generate assembly for a file
+examples/FightLandlord/protocal.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/protocal.cc.s
+.PHONY : examples/FightLandlord/protocal.cc.s
+
+examples/FightLandlord/ws_session.o: examples/FightLandlord/ws_session.cc.o
+
+.PHONY : examples/FightLandlord/ws_session.o
+
+# target to build an object file
+examples/FightLandlord/ws_session.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/ws_session.cc.o
+.PHONY : examples/FightLandlord/ws_session.cc.o
+
+examples/FightLandlord/ws_session.i: examples/FightLandlord/ws_session.cc.i
+
+.PHONY : examples/FightLandlord/ws_session.i
+
+# target to preprocess a source file
+examples/FightLandlord/ws_session.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/ws_session.cc.i
+.PHONY : examples/FightLandlord/ws_session.cc.i
+
+examples/FightLandlord/ws_session.s: examples/FightLandlord/ws_session.cc.s
+
+.PHONY : examples/FightLandlord/ws_session.s
+
+# target to generate assembly for a file
+examples/FightLandlord/ws_session.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/ws_session.cc.s
+.PHONY : examples/FightLandlord/ws_session.cc.s
 
 examples/echoServer.o: examples/echoServer.cc.o
 
@@ -526,6 +739,114 @@ src/http/http11_parser.s: src/http/http11_parser.cc.s
 src/http/http11_parser.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http11_parser.cc.s
 .PHONY : src/http/http11_parser.cc.s
+
+src/http/http_request.o: src/http/http_request.cc.o
+
+.PHONY : src/http/http_request.o
+
+# target to build an object file
+src/http/http_request.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_request.cc.o
+.PHONY : src/http/http_request.cc.o
+
+src/http/http_request.i: src/http/http_request.cc.i
+
+.PHONY : src/http/http_request.i
+
+# target to preprocess a source file
+src/http/http_request.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_request.cc.i
+.PHONY : src/http/http_request.cc.i
+
+src/http/http_request.s: src/http/http_request.cc.s
+
+.PHONY : src/http/http_request.s
+
+# target to generate assembly for a file
+src/http/http_request.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_request.cc.s
+.PHONY : src/http/http_request.cc.s
+
+src/http/http_responce.o: src/http/http_responce.cc.o
+
+.PHONY : src/http/http_responce.o
+
+# target to build an object file
+src/http/http_responce.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_responce.cc.o
+.PHONY : src/http/http_responce.cc.o
+
+src/http/http_responce.i: src/http/http_responce.cc.i
+
+.PHONY : src/http/http_responce.i
+
+# target to preprocess a source file
+src/http/http_responce.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_responce.cc.i
+.PHONY : src/http/http_responce.cc.i
+
+src/http/http_responce.s: src/http/http_responce.cc.s
+
+.PHONY : src/http/http_responce.s
+
+# target to generate assembly for a file
+src/http/http_responce.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_responce.cc.s
+.PHONY : src/http/http_responce.cc.s
+
+src/http/http_servlet.o: src/http/http_servlet.cc.o
+
+.PHONY : src/http/http_servlet.o
+
+# target to build an object file
+src/http/http_servlet.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_servlet.cc.o
+.PHONY : src/http/http_servlet.cc.o
+
+src/http/http_servlet.i: src/http/http_servlet.cc.i
+
+.PHONY : src/http/http_servlet.i
+
+# target to preprocess a source file
+src/http/http_servlet.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_servlet.cc.i
+.PHONY : src/http/http_servlet.cc.i
+
+src/http/http_servlet.s: src/http/http_servlet.cc.s
+
+.PHONY : src/http/http_servlet.s
+
+# target to generate assembly for a file
+src/http/http_servlet.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_servlet.cc.s
+.PHONY : src/http/http_servlet.cc.s
+
+src/http/http_session.o: src/http/http_session.cc.o
+
+.PHONY : src/http/http_session.o
+
+# target to build an object file
+src/http/http_session.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_session.cc.o
+.PHONY : src/http/http_session.cc.o
+
+src/http/http_session.i: src/http/http_session.cc.i
+
+.PHONY : src/http/http_session.i
+
+# target to preprocess a source file
+src/http/http_session.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_session.cc.i
+.PHONY : src/http/http_session.cc.i
+
+src/http/http_session.s: src/http/http_session.cc.s
+
+.PHONY : src/http/http_session.s
+
+# target to generate assembly for a file
+src/http/http_session.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/http/http_session.cc.s
+.PHONY : src/http/http_session.cc.s
 
 src/http/httpclient_parser.o: src/http/httpclient_parser.cc.o
 
@@ -932,6 +1253,114 @@ tests/test_hook.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.s
 .PHONY : tests/test_hook.cc.s
 
+tests/test_httprequest.o: tests/test_httprequest.cc.o
+
+.PHONY : tests/test_httprequest.o
+
+# target to build an object file
+tests/test_httprequest.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httprequest.dir/build.make CMakeFiles/test_httprequest.dir/tests/test_httprequest.cc.o
+.PHONY : tests/test_httprequest.cc.o
+
+tests/test_httprequest.i: tests/test_httprequest.cc.i
+
+.PHONY : tests/test_httprequest.i
+
+# target to preprocess a source file
+tests/test_httprequest.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httprequest.dir/build.make CMakeFiles/test_httprequest.dir/tests/test_httprequest.cc.i
+.PHONY : tests/test_httprequest.cc.i
+
+tests/test_httprequest.s: tests/test_httprequest.cc.s
+
+.PHONY : tests/test_httprequest.s
+
+# target to generate assembly for a file
+tests/test_httprequest.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httprequest.dir/build.make CMakeFiles/test_httprequest.dir/tests/test_httprequest.cc.s
+.PHONY : tests/test_httprequest.cc.s
+
+tests/test_httpresponce.o: tests/test_httpresponce.cc.o
+
+.PHONY : tests/test_httpresponce.o
+
+# target to build an object file
+tests/test_httpresponce.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpresponce.dir/build.make CMakeFiles/test_httpresponce.dir/tests/test_httpresponce.cc.o
+.PHONY : tests/test_httpresponce.cc.o
+
+tests/test_httpresponce.i: tests/test_httpresponce.cc.i
+
+.PHONY : tests/test_httpresponce.i
+
+# target to preprocess a source file
+tests/test_httpresponce.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpresponce.dir/build.make CMakeFiles/test_httpresponce.dir/tests/test_httpresponce.cc.i
+.PHONY : tests/test_httpresponce.cc.i
+
+tests/test_httpresponce.s: tests/test_httpresponce.cc.s
+
+.PHONY : tests/test_httpresponce.s
+
+# target to generate assembly for a file
+tests/test_httpresponce.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpresponce.dir/build.make CMakeFiles/test_httpresponce.dir/tests/test_httpresponce.cc.s
+.PHONY : tests/test_httpresponce.cc.s
+
+tests/test_httpserver.o: tests/test_httpserver.cc.o
+
+.PHONY : tests/test_httpserver.o
+
+# target to build an object file
+tests/test_httpserver.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/tests/test_httpserver.cc.o
+.PHONY : tests/test_httpserver.cc.o
+
+tests/test_httpserver.i: tests/test_httpserver.cc.i
+
+.PHONY : tests/test_httpserver.i
+
+# target to preprocess a source file
+tests/test_httpserver.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/tests/test_httpserver.cc.i
+.PHONY : tests/test_httpserver.cc.i
+
+tests/test_httpserver.s: tests/test_httpserver.cc.s
+
+.PHONY : tests/test_httpserver.s
+
+# target to generate assembly for a file
+tests/test_httpserver.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/tests/test_httpserver.cc.s
+.PHONY : tests/test_httpserver.cc.s
+
+tests/test_httpsession.o: tests/test_httpsession.cc.o
+
+.PHONY : tests/test_httpsession.o
+
+# target to build an object file
+tests/test_httpsession.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpsession.dir/build.make CMakeFiles/test_httpsession.dir/tests/test_httpsession.cc.o
+.PHONY : tests/test_httpsession.cc.o
+
+tests/test_httpsession.i: tests/test_httpsession.cc.i
+
+.PHONY : tests/test_httpsession.i
+
+# target to preprocess a source file
+tests/test_httpsession.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpsession.dir/build.make CMakeFiles/test_httpsession.dir/tests/test_httpsession.cc.i
+.PHONY : tests/test_httpsession.cc.i
+
+tests/test_httpsession.s: tests/test_httpsession.cc.s
+
+.PHONY : tests/test_httpsession.s
+
+# target to generate assembly for a file
+tests/test_httpsession.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpsession.dir/build.make CMakeFiles/test_httpsession.dir/tests/test_httpsession.cc.s
+.PHONY : tests/test_httpsession.cc.s
+
 tests/test_iomanager.o: tests/test_iomanager.cc.o
 
 .PHONY : tests/test_iomanager.o
@@ -1012,6 +1441,33 @@ tests/test_parser.s: tests/test_parser.cc.s
 tests/test_parser.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/tests/test_parser.cc.s
 .PHONY : tests/test_parser.cc.s
+
+tests/test_random.o: tests/test_random.cc.o
+
+.PHONY : tests/test_random.o
+
+# target to build an object file
+tests/test_random.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_random.dir/build.make CMakeFiles/test_random.dir/tests/test_random.cc.o
+.PHONY : tests/test_random.cc.o
+
+tests/test_random.i: tests/test_random.cc.i
+
+.PHONY : tests/test_random.i
+
+# target to preprocess a source file
+tests/test_random.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_random.dir/build.make CMakeFiles/test_random.dir/tests/test_random.cc.i
+.PHONY : tests/test_random.cc.i
+
+tests/test_random.s: tests/test_random.cc.s
+
+.PHONY : tests/test_random.s
+
+# target to generate assembly for a file
+tests/test_random.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_random.dir/build.make CMakeFiles/test_random.dir/tests/test_random.cc.s
+.PHONY : tests/test_random.cc.s
 
 tests/test_scheduler.o: tests/test_scheduler.cc.o
 
@@ -1154,23 +1610,44 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... echo_server"
-	@echo "... test_tcpserver"
-	@echo "... test_bytearray"
-	@echo "... edit_cache"
-	@echo "... tadpole"
-	@echo "... test_parser"
-	@echo "... test_log"
-	@echo "... test_hook"
-	@echo "... test_config"
 	@echo "... rebuild_cache"
-	@echo "... test_socket"
-	@echo "... test_yaml"
-	@echo "... test_thread"
-	@echo "... test_fiber"
 	@echo "... test_scheduler"
-	@echo "... test_iomanager"
+	@echo "... test_fiber"
+	@echo "... test_httpserver"
+	@echo "... test_thread"
+	@echo "... test_yaml"
+	@echo "... test_socket"
+	@echo "... test_config"
+	@echo "... test_httpsession"
+	@echo "... test_log"
+	@echo "... test_parser"
 	@echo "... test_addr"
+	@echo "... tadpole"
+	@echo "... edit_cache"
+	@echo "... test_bytearray"
+	@echo "... test_hook"
+	@echo "... test_tcpserver"
+	@echo "... echo_server"
+	@echo "... test_httprequest"
+	@echo "... test_httpresponce"
+	@echo "... test_random"
+	@echo "... test_iomanager"
+	@echo "... fl_server"
+	@echo "... examples/FLServer.o"
+	@echo "... examples/FLServer.i"
+	@echo "... examples/FLServer.s"
+	@echo "... examples/FightLandlord/Random.o"
+	@echo "... examples/FightLandlord/Random.i"
+	@echo "... examples/FightLandlord/Random.s"
+	@echo "... examples/FightLandlord/Room.o"
+	@echo "... examples/FightLandlord/Room.i"
+	@echo "... examples/FightLandlord/Room.s"
+	@echo "... examples/FightLandlord/protocal.o"
+	@echo "... examples/FightLandlord/protocal.i"
+	@echo "... examples/FightLandlord/protocal.s"
+	@echo "... examples/FightLandlord/ws_session.o"
+	@echo "... examples/FightLandlord/ws_session.i"
+	@echo "... examples/FightLandlord/ws_session.s"
 	@echo "... examples/echoServer.o"
 	@echo "... examples/echoServer.i"
 	@echo "... examples/echoServer.s"
@@ -1195,6 +1672,18 @@ help:
 	@echo "... src/http/http11_parser.o"
 	@echo "... src/http/http11_parser.i"
 	@echo "... src/http/http11_parser.s"
+	@echo "... src/http/http_request.o"
+	@echo "... src/http/http_request.i"
+	@echo "... src/http/http_request.s"
+	@echo "... src/http/http_responce.o"
+	@echo "... src/http/http_responce.i"
+	@echo "... src/http/http_responce.s"
+	@echo "... src/http/http_servlet.o"
+	@echo "... src/http/http_servlet.i"
+	@echo "... src/http/http_servlet.s"
+	@echo "... src/http/http_session.o"
+	@echo "... src/http/http_session.i"
+	@echo "... src/http/http_session.s"
 	@echo "... src/http/httpclient_parser.o"
 	@echo "... src/http/httpclient_parser.i"
 	@echo "... src/http/httpclient_parser.s"
@@ -1240,6 +1729,18 @@ help:
 	@echo "... tests/test_hook.o"
 	@echo "... tests/test_hook.i"
 	@echo "... tests/test_hook.s"
+	@echo "... tests/test_httprequest.o"
+	@echo "... tests/test_httprequest.i"
+	@echo "... tests/test_httprequest.s"
+	@echo "... tests/test_httpresponce.o"
+	@echo "... tests/test_httpresponce.i"
+	@echo "... tests/test_httpresponce.s"
+	@echo "... tests/test_httpserver.o"
+	@echo "... tests/test_httpserver.i"
+	@echo "... tests/test_httpserver.s"
+	@echo "... tests/test_httpsession.o"
+	@echo "... tests/test_httpsession.i"
+	@echo "... tests/test_httpsession.s"
 	@echo "... tests/test_iomanager.o"
 	@echo "... tests/test_iomanager.i"
 	@echo "... tests/test_iomanager.s"
@@ -1249,6 +1750,9 @@ help:
 	@echo "... tests/test_parser.o"
 	@echo "... tests/test_parser.i"
 	@echo "... tests/test_parser.s"
+	@echo "... tests/test_random.o"
+	@echo "... tests/test_random.i"
+	@echo "... tests/test_random.s"
 	@echo "... tests/test_scheduler.o"
 	@echo "... tests/test_scheduler.i"
 	@echo "... tests/test_scheduler.s"

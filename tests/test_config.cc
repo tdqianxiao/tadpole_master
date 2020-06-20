@@ -1,5 +1,5 @@
-#include "log.h"
-#include "config.h"
+#include "src/log.h"
+#include "src/config.h"
 #include "yaml.h"
 
 static tadpole::Logger::ptr g_logger = TADPOLE_FIND_LOGGER("root"); 

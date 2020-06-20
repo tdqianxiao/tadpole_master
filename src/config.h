@@ -12,7 +12,7 @@
 #include <iostream>
 
 #include "yaml.h"
-#include "mutex.h"
+#include "src/mutex.h"
 
 namespace tadpole{
 

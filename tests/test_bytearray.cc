@@ -1,7 +1,8 @@
-#include "bytearray.h"
-#include "macro.h"
-#include "log.h"
-#include "iomanager.h"
+#include "src/bytearray.h"
+#include "src/macro.h"
+#include "src/log.h"
+#include "src/iomanager.h"
+#include "src/socket.h"
 
 using namespace tadpole;
 

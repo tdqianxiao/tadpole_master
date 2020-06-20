@@ -1,7 +1,7 @@
-#include "socket.h"
-#include "fdmanager.h"
-#include "macro.h"
-#include "log.h"
+#include "src/socket.h"
+#include "src/fdmanager.h"
+#include "src/macro.h"
+#include "src/log.h"
 #include <netinet/tcp.h>
 
 namespace tadpole{
@@ -162,6 +162,17 @@ int Socket::recvFrom(void *buf , size_t len , Address::ptr addr , int flag){
 	return recvfrom(m_sock,buf,len,flag,addr->getAddr(),nullptr);
 }
 
+int Socket::recvTo(ByteArray::ptr ba,size_t size){
+	std::vector<iovec> vec;
+	ba->getWriteBuffers(vec,size);
+	int ret = Socket::recv(vec);
+	if(ret <= 0){
+		return ret ; 
+	}
+	ba->setUsedCount(ret);
+	return ret;
+}
+
 int Socket::send(void * buf , size_t len , int flags){
 	return ::send(m_sock,buf,len,flags);
 }
@@ -170,8 +181,15 @@ int Socket::sendTo(void * buf , size_t len ,Address::ptr addr,int flags){
 	return ::sendto(m_sock,buf,len,flags,addr->getAddr(),addr->getAddrLen());
 }
 
+int Socket::sendFrom(ByteArray::ptr ba,size_t size){
+	std::vector<iovec> vec;
+	ba->getReadBuffers(vec,size);
+	return Socket::send(vec);
+}
+
 int Socket::recv(const std::vector<iovec>& iov,int flag ){
-	int result = 0; 
+	int result = 0;
+	//std::cout<< "iov.size: "<< iov.size()<<std::endl;
 	for(auto &it : iov){
 		int ret = ::recv(m_sock,it.iov_base,it.iov_len,flag);
 		if(ret <= 0){

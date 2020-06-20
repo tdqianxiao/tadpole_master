@@ -1,6 +1,6 @@
-#include "timer.h"
-#include "util.h"
-#include "log.h"
+#include "src/timer.h"
+#include "src/util.h"
+#include "src/log.h"
 
 namespace tadpole{
 

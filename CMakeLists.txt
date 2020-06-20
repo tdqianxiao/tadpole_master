@@ -8,7 +8,6 @@ set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O3 -fPIC -ggdb -std=c++11 -Wall -
 set(CMAKE_C_FLAGS "$ENV{CXXFLAGS} -rdynamic -O3 -fPIC -ggdb -std=c11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -Wno-deprecated-declarations")
 
 include_directories(.)
-include_directories(./src)
 include_directories(~/yaml-cpp-master/include/yaml-cpp)
 
 set(LIB_SRC
@@ -29,6 +28,14 @@ set(LIB_SRC
 	  src/tcpserver.cc
 	  src/http/http11_parser.cc
 	  src/http/httpclient_parser.cc
+	  src/http/http_request.cc
+	  src/http/http_responce.cc
+	  src/http/http_session.cc
+	  src/http/http_servlet.cc
+	  examples/FightLandlord/Random.cc
+	  examples/FightLandlord/ws_session.cc
+	  examples/FightLandlord/Room.cc
+	  examples/FightLandlord/protocal.cc
     )
 
 add_library(tadpole SHARED ${LIB_SRC})
@@ -57,6 +64,12 @@ tadpole_add_executable(test_bytearray "tests/test_bytearray.cc" tadpole "${LIBS}
 tadpole_add_executable(test_parser "tests/test_parser.cc" tadpole "${LIBS}")
 tadpole_add_executable(test_tcpserver "tests/test_tcpserver.cc" tadpole "${LIBS}")
 tadpole_add_executable(echo_server "examples/echoServer.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_httprequest "tests/test_httprequest.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_httpresponce "tests/test_httpresponce.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_httpsession "tests/test_httpsession.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_httpserver "tests/test_httpserver.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_random "tests/test_random.cc" tadpole "${LIBS}")
+tadpole_add_executable(fl_server "examples/FLServer.cc" tadpole "${LIBS}")
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

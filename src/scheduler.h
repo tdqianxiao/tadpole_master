@@ -6,9 +6,9 @@
 #include <list>
 #include <atomic>
 
-#include "thread.h"
-#include "mutex.h"
-#include "fiber.h"
+#include "src/thread.h"
+#include "src/mutex.h"
+#include "src/fiber.h"
 
 namespace tadpole{
 

@@ -1,6 +1,6 @@
-#include "socket.h"
-#include "iomanager.h"
-#include "log.h"
+#include "src/socket.h"
+#include "src/iomanager.h"
+#include "src/log.h"
 
 using namespace tadpole;
 
@@ -83,9 +83,9 @@ void test_client(){
 }
 
 int main (){
-//	IOManager::ptr iom(new IOManager(4));
+	IOManager::ptr iom(new IOManager(4));
 	//iom->schedule(test_socket);
 	//iom->schedule(test_server);
-//	iom->schedule(test_echo);
-	test_client();
+	iom->schedule(test_client);
+//	test_client();
 }

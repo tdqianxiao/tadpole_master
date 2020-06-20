@@ -1,7 +1,7 @@
-#include "fiber.h"
-#include "log.h"
-#include "config.h"
-#include "macro.h"
+#include "src/fiber.h"
+#include "src/log.h"
+#include "src/config.h"
+#include "src/macro.h"
 #include <atomic>
 
 namespace tadpole{
@@ -179,6 +179,7 @@ void Fiber::MainFunc(){
 		TADPOLE_LOG_ERROR(g_logger) << "fiber exception : "
 									<< e.what();
 	}catch(...){
+		TADPOLE_LOG_ERROR(g_logger) << "fiber exception";
 		t_curFiber->m_state = EXCEPT;
 	}
 	if(t_curFiber == t_mainFiber.get()){

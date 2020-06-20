@@ -5,7 +5,7 @@
 #include <pthread.h>
 #include <functional>
 
-#include "mutex.h"
+#include "src/mutex.h"
 
 namespace tadpole{
 

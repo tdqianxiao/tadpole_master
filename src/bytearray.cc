@@ -1,6 +1,6 @@
-#include "bytearray.h"
-#include "macro.h"
-#include "log.h"
+#include "src/bytearray.h"
+#include "src/macro.h"
+#include "src/log.h"
 #include <string.h>
 
 namespace tadpole{
@@ -189,63 +189,67 @@ void ByteArray::readFUint64(uint64_t &val){
 	val = byteswapOnBigEndian(val);
 }
 
-void ByteArray::readInt32(int32_t &val){
-	val = 0 ; 
+void ByteArray::readInt32(int32_t &val) {
+	val = 0;
 	char tmp = 0;
-	while(true){
-		read(&tmp,1);
-		if(tmp & 0x80){
+	int n = 0; 
+	while (true) {
+		read(&tmp, 1);
+		if (tmp & 0x80) {
 			tmp &= ~0x80;
-			val |= tmp;
+			val |= tmp<<(n*7);
 			break;
 		}
-		val |= tmp ; 
-		val <<= 7;
+		val |= tmp<<(n*7);
+		++n;
 	}
 }
 
-void ByteArray::readInt64(int64_t &val){
-	val = 0 ; 
+void ByteArray::readInt64(int64_t &val) {
+	val = 0;
 	char tmp = 0;
-	while(true){
-		read(&tmp,1);
-		if(tmp & 0x80){
+	int n = 0;
+	while (true) {
+		read(&tmp, 1);
+		if (tmp & 0x80) {
 			tmp &= ~0x80;
-			val |= tmp;
+			val |= tmp << (n*7);
 			break;
 		}
-		val |= tmp ; 
-		val <<= 7;
+		val |= tmp<<(n*7);
+		++n;
 	}
 }
 
-void ByteArray::readUint32(uint32_t &val){
-	val = 0 ; 
+void ByteArray::readUint32(uint32_t &val) {
+	val = 0;
 	char tmp = 0;
-	while(true){
-		read(&tmp,1);
-		if(tmp & 0x80){
+	int n = 0;
+	while (true) {
+		read(&tmp, 1);
+		if (tmp & 0x80) {
 			tmp &= ~0x80;
-			val |= tmp;
+			val |= tmp << (n * 7);
 			break;
 		}
-		val |= tmp ; 
-		val <<= 7;
-	}	
+		val |= tmp << (n * 7);
+		++n;
+	}
 }
 
-void ByteArray::readUint64(uint64_t &val){
-	val = 0 ; 
+void ByteArray::readUint64(uint64_t &val) {
+	val = 0;
 	char tmp = 0;
-	while(true){
-		read(&tmp,1);
-		if(tmp & 0x80){
+	int n = 0;
+	while (true) {
+		read(&tmp, 1);
+		if (tmp & 0x80) {
 			tmp &= ~0x80;
-			val |= tmp;
+			val |= tmp << (n * 7);
 			break;
 		}
-		val |= tmp ; 
-		val <<= 7;
+		val |= tmp << (n * 7);
+		++n;
 	}
 }
 	

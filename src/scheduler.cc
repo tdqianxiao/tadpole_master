@@ -1,7 +1,7 @@
-#include "scheduler.h"
-#include "log.h"
-#include "macro.h"
-#include "hook.h"
+#include "src/scheduler.h"
+#include "src/log.h"
+#include "src/macro.h"
+#include "src/hook.h"
 
 namespace tadpole{
 
@@ -26,7 +26,9 @@ Scheduler::Scheduler(uint32_t threadcount
 					,bool usercaller ,const std::string & name )
 					:m_threadCount(threadcount)
 					,m_name(name){
-	t_scheduler = this;
+	if(!t_scheduler){
+		t_scheduler = this;
+	}
 	if(usercaller){
 		Fiber::GetCurFiber();
 		--m_threadCount;

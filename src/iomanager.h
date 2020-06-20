@@ -4,8 +4,8 @@
 #include <unistd.h>
 #include <sys/epoll.h>
 
-#include "scheduler.h"
-#include "timer.h"
+#include "src/scheduler.h"
+#include "src/timer.h"
 
 namespace tadpole{
 

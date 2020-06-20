@@ -1,7 +1,7 @@
-#include "address.h"
-#include "blbyteswap.h"
-#include "log.h"
-#include "util.h"
+#include "src/address.h"
+#include "src/blbyteswap.h"
+#include "src/log.h"
+#include "src/util.h"
 #include <ifaddrs.h>
 #include <netdb.h>
 

@@ -2,10 +2,10 @@
 #define __TADPOLE_TCP_SERVER_H__
 
 #include <memory>
-#include "socket.h"
-#include "iomanager.h"
-#include "bytearray.h"
-#include "address.h"
+#include "src/socket.h"
+#include "src/iomanager.h"
+#include "src/bytearray.h"
+#include "src/address.h"
 
 namespace tadpole{
 
@@ -22,8 +22,10 @@ public:
 	/**
 	 * @brief 构造函数
 	 * @param[in] iom 准备在哪个iomanager上执行
+	 * @param[in] iom acceptIOManager
 	 */
-	TcpServer(IOManager * iom = IOManager::GetCurIOM());
+	TcpServer(IOManager * iom = IOManager::GetCurIOM(),
+			  IOManager * accept = IOManager::GetCurIOM());
 
 	/**
 	 * @brief 析构函数，释放文件描述符
@@ -58,6 +60,8 @@ private:
 	std::vector<Socket::ptr> m_socks; 
 	//io线程池
 	IOManager * m_iom = nullptr; 
+	//accept线程池
+	IOManager * m_accept = nullptr; 
 };
 
 }

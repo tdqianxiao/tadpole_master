@@ -8,9 +8,9 @@
 #include "src/http/http11_parser.h"
 #include "src/http/httpclient_parser.h"
 
-#include "log.h"
-#include "socket.h"
-#include "bytearray.h"
+#include "src/log.h"
+#include "src/socket.h"
+#include "src/bytearray.h"
 
 static tadpole::Logger::ptr g_logger = TADPOLE_FIND_LOGGER("root");
 

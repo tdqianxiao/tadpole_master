@@ -1,7 +1,7 @@
 #include <iostream>
 #include <unistd.h>
-#include "log.h"
-#include "util.h"
+#include "src/log.h"
+#include "src/util.h"
 
 static tadpole::Logger::ptr g_logger = TADPOLE_FIND_LOGGER("system");
 

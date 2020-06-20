@@ -1,6 +1,6 @@
-#include "thread.h"
-#include "log.h"
-#include "mutex.h"
+#include "src/thread.h"
+#include "src/log.h"
+#include "src/mutex.h"
 #include <unistd.h>
 
 static tadpole::Logger::ptr g_logger = TADPOLE_FIND_LOGGER("root");

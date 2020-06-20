@@ -1,13 +1,13 @@
-#include "hook.h"
+#include "src/hook.h"
 #include <dlfcn.h>
 #include <stdarg.h>
 
-#include "config.h"
-#include "log.h"
-#include "fiber.h"
-#include "iomanager.h"
-#include "fdmanager.h"
-#include "macro.h"
+#include "src/config.h"
+#include "src/log.h"
+#include "src/fiber.h"
+#include "src/iomanager.h"
+#include "src/fdmanager.h"
+#include "src/macro.h"
 
 static tadpole::Logger::ptr g_logger = TADPOLE_FIND_LOGGER("system");
 
@@ -111,7 +111,7 @@ static ssize_t do_io(int fd , OldFun func ,const char * hook_fun_name ,
 	//获得该文件描述符的超时时间
 	uint64_t to = sts->getTimeOut(timeout_so);
 	//用于条件定时器
-	std::shared_ptr <timer_info> tinfo(new timer_info);
+	std::shared_ptr<timer_info> tinfo(new timer_info);
 retry:
 	ssize_t n = func(fd,std::forward<Args>(args)...);
 	//有超时时间的函数，如果超时会继续重复执行
@@ -126,7 +126,7 @@ retry:
 
 		if(to != (uint64_t)-1) {
 			//添加条件定时器，若在延时期间未触发事件直接将事件取消
-            timer = iom->addCondTimer(fd, [winfo, fd, iom, event]() {
+            timer = iom->addCondTimer(to, [winfo, fd, iom, event]() {
                 auto t = winfo.lock();
                 if(!t || t->cancelled) {
                     return;
@@ -152,8 +152,9 @@ retry:
             }
 			//如果取消了，直接设置errno，返回-1
             if(tinfo->cancelled) {
+            	//TADPOLE_LOG_INFO(g_logger)<< hook_fun_name << " cancelled : "<< tinfo->cancelled;
                 errno = tinfo->cancelled;
-                return -1;
+                return -2;
             }
 			//直接回到上面继续io操作
             goto retry;
@@ -271,14 +272,14 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
     }
 
     int rt = iom->addEvent(fd, tadpole::IOManager::WRITE);
-    if(rt == 0) {
+    if(rt) {
         tadpole::Fiber::YieldToHold();
         if(timer) {
             timer->cancel();
         }
         if(tinfo->cancelled) {
             errno = tinfo->cancelled;
-            return -1;
+            return -2;
         }
     } else {
         if(timer) {

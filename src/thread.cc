@@ -1,7 +1,7 @@
-#include "thread.h"
-#include "util.h"
+#include "src/thread.h"
+#include "src/util.h"
 
-#include "log.h"
+#include "src/log.h"
 
 namespace tadpole{
 

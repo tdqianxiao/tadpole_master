@@ -1,5 +1,5 @@
-#include "log.h"
-#include "config.h"
+#include "src/log.h"
+#include "src/config.h"
 
 namespace tadpole{
 

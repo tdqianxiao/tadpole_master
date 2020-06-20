@@ -1,5 +1,5 @@
-#include "scheduler.h"
-#include "log.h"
+#include "src/scheduler.h"
+#include "src/log.h"
 #include <unistd.h>
 
 using namespace tadpole;
