@@ -9,6 +9,7 @@ set(CMAKE_C_FLAGS "$ENV{CXXFLAGS} -rdynamic -O3 -fPIC -ggdb -std=c11 -Wall -Wno-
 
 include_directories(.)
 include_directories(~/yaml-cpp-master/include/yaml-cpp)
+include_directories(./src/lua/lua-5.3.5/src)
 
 set(LIB_SRC
 	  src/hook.cc
@@ -26,6 +27,8 @@ set(LIB_SRC
 	  src/socket.cc
 	  src/bytearray.cc
 	  src/tcpserver.cc
+	  src/luastack.cc
+	  src/luaregister.cc
 	  src/http/http11_parser.cc
 	  src/http/httpclient_parser.cc
 	  src/http/http_request.cc
@@ -42,34 +45,38 @@ add_library(tadpole SHARED ${LIB_SRC})
 force_redefine_file_macro_for_sources(tadpole)
 find_library(PTHREAD pthread)
 
+link_directories(./src/lua/lua-5.3.5/src)
+
 set(LIBS
         tadpole
 		yaml-cpp
 		pthread
 		dl
+		lua
         )
 
 
-tadpole_add_executable(test_log "tests/test_log.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_config "tests/test_config.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_yaml "tests/test_yaml.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_thread "tests/test_thread.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_fiber "tests/test_fiber.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_scheduler "tests/test_scheduler.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_log "tests/test_log.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_config "tests/test_config.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_yaml "tests/test_yaml.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_thread "tests/test_thread.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_fiber "tests/test_fiber.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_scheduler "tests/test_scheduler.cc" tadpole "${LIBS}")
 tadpole_add_executable(test_iomanager "tests/test_iomanager.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_hook "tests/test_hook.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_addr "tests/test_addr.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_socket "tests/test_socket.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_bytearray "tests/test_bytearray.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_parser "tests/test_parser.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_tcpserver "tests/test_tcpserver.cc" tadpole "${LIBS}")
-tadpole_add_executable(echo_server "examples/echoServer.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_httprequest "tests/test_httprequest.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_httpresponce "tests/test_httpresponce.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_httpsession "tests/test_httpsession.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_httpserver "tests/test_httpserver.cc" tadpole "${LIBS}")
-tadpole_add_executable(test_random "tests/test_random.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_hook "tests/test_hook.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_addr "tests/test_addr.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_socket "tests/test_socket.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_bytearray "tests/test_bytearray.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_parser "tests/test_parser.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_tcpserver "tests/test_tcpserver.cc" tadpole "${LIBS}")
+#tadpole_add_executable(echo_server "examples/echoServer.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_httprequest "tests/test_httprequest.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_httpresponce "tests/test_httpresponce.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_httpsession "tests/test_httpsession.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_httpserver "tests/test_httpserver.cc" tadpole "${LIBS}")
+#tadpole_add_executable(test_random "tests/test_random.cc" tadpole "${LIBS}")
 tadpole_add_executable(fl_server "examples/FLServer.cc" tadpole "${LIBS}")
+tadpole_add_executable(test_lua "tests/test_lua.cc" tadpole "${LIBS}")
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

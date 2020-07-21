@@ -37,6 +37,11 @@ public:
 	 * @brief 是否保持连接
 	 */
 	int isClose(){return m_close;}
+	
+	/**
+	 * @brief 是否关闭socket
+	 */
+	int closeSock(){return m_closeSock;}
 
 private:
 	//socket
@@ -46,7 +51,11 @@ private:
 	//Responder
 	Responder::ptr m_rep; 
 	//是否保持连接,0保持连接
-	int m_close = 1;	
+	int m_close = 1;
+	//是否关闭socket
+	int m_closeSock = 1;
+	//是否在等待其它玩家
+	int m_iswait = 0;
 };
 
 }

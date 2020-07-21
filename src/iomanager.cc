@@ -1,6 +1,7 @@
 #include "src/hook.h"
 #include "src/iomanager.h"
 #include "src/log.h"
+#include "src/fdmanager.h"
 
 #include <string.h>
 #include <fcntl.h>
@@ -153,6 +154,9 @@ bool IOManager::delEvent(int fd, Event event){
 	}
 	MutexType::RDLock lock(m_mutex);
 	EventHandle * fd_event = m_fds[fd];
+	if(!(fd_event->event & event)){
+		return false; 
+	}
 	lock.unlock();
 	
 	
@@ -185,18 +189,22 @@ bool IOManager::delEvent(int fd, Event event){
 
 bool IOManager::cancelEvent(int fd , Event event){
 	if(fd >= (int)m_fds.size()){
+		tadpole::FdSts::ptr sts= tadpole::FdMgr::GetInstance()->get(fd);
+		if(sts)sts->setAutoStop(false);
 		return false;
 	}
 	MutexType::RDLock lock(m_mutex);
 	EventHandle * fd_event = m_fds[fd];
+	if(!(fd_event->event & event)){
+		tadpole::FdSts::ptr sts= tadpole::FdMgr::GetInstance()->get(fd);
+		if(sts)sts->setAutoStop(false);
+		return false;
+	}
 	lock.unlock();
 	
 	
 	EventHandle::MutexType::Lock lock2(fd_event->mutex);
 	//TADPOLE_LOG_INFO(g_logger) << fd_event->event;
-	if(!(fd_event->event & (READ|WRITE))){
-		return false;
-	}
 	int op = (fd_event->event & ~event & ~EPOLLET) ? EPOLL_CTL_MOD : EPOLL_CTL_DEL;
 	int events = fd_event->event & ~event;
 	fd_event->event = (Event)events; 
@@ -220,6 +228,8 @@ bool IOManager::cancelEvent(int fd , Event event){
 
 bool IOManager::cancelAllEvent(int fd){
 	if(fd >= (int)m_fds.size()){
+		tadpole::FdSts::ptr sts= tadpole::FdMgr::GetInstance()->get(fd);
+		if(sts)sts->setAutoStop(false);
 		return false;
 	}
 	MutexType::RDLock lock(m_mutex);
@@ -229,6 +239,8 @@ bool IOManager::cancelAllEvent(int fd){
 	
 	EventHandle::MutexType::Lock lock2(fd_event->mutex);
 	if(!(fd_event->event & (READ|WRITE))){
+		tadpole::FdSts::ptr sts= tadpole::FdMgr::GetInstance()->get(fd);
+		if(sts)sts->setAutoStop(false);
 		return false; 
 	}
 	int op = EPOLL_CTL_DEL;

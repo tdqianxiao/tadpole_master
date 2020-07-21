@@ -66,14 +66,35 @@ void testTime(){
 	TADPOLE_LOG_INFO(g_logger) <<x;
 }
 
-void test_iomanager(){
-	IOManager::ptr iom(new IOManager(8));
-	iom->schedule(&fun);
+Fiber::ptr my_fiber = nullptr; 
+
+void test_del(){
+	TADPOLE_LOG_DEBUG(g_logger) << "del begin";
+	std::shared_ptr<char> hehe(new char,[](char * ptr){
+		TADPOLE_LOG_ERROR(g_logger) << "free";
+		delete ptr; 
+	});
+	
+	my_fiber = Fiber::GetCurFiber();
+	Fiber::YieldToHold();
 }
 
+void m_free(){
+	
+}
+
+void test_iomanager(){
+	IOManager::ptr iom(new IOManager(4));
+	iom->schedule(&test_del);
+	sleep(2);
+	iom->schedule(my_fiber);
+}
+
+
 int main (){
-	//test_iomanager();	
-	testEvent();
+	test_iomanager();	
+	//testEvent();
 	//testTime();
+//	test_del();
 	return 0 ; 
 }

@@ -1,5 +1,6 @@
 #include "protocal.h"
 #include "src/log.h"
+#include "src/iomanager.h"
 #include <assert.h>
 
 namespace tadpole{
@@ -60,7 +61,7 @@ int LoginRsp::send(Socket::ptr sock , uint16_t status){
 }
 
 //返回房间号
-int AddSession::parser(ByteArray::ptr ba,std::function<int(
+std::pair<int,uint8_t> AddSession::parser(ByteArray::ptr ba,std::function<std::pair<int,uint8_t>(
 						const std::string &)> cb){
 	uint16_t bodysize = 0 ; 
 	ba->readFUint16(bodysize);//读body大小
@@ -79,10 +80,53 @@ int AddSession::parser(ByteArray::ptr ba,std::function<int(
 	return cb(name);
 }
 
-int AddSessionRsp::send(Socket::ptr sock, int roomId){
+int AddSessionRsp::send(Socket::ptr sock, int roomId,uint8_t pri){
 	ByteArray::ptr ba(new ByteArray(16));
 	ba->writeFInt16((uint16_t)MsgRsp::ADDSESSRSP);//协议
-	ba->writeFInt32(roomId);//返回状态	
+	ba->writeFUint16(5);//bodysize	
+
+		
+	char buf[8]; 
+	memcpy(buf,(const char*)&roomId,4);
+	memcpy(buf + 4,(const char*)&pri,1);
+	int key = encrypt(buf,5);
+
+	ba->writeInt32(key);
+	ba->write(buf,5);
+
+	return sock->sendFrom(ba,ba->getSize());
+}
+
+int DisplayPearName::send(Socket::ptr sock,
+						std::unordered_map<uint8_t,std::string> names ){
+	if(names.empty()){
+		return 0; 
+	}
+	ByteArray::ptr ba(new ByteArray(128));
+	ba->writeFInt16((uint16_t)MsgRsp::DISPEARNAME);//协议
+	
+	std::shared_ptr<char> buf(new char[128],[](char * ptr){delete [] ptr;});
+	char * tmp = buf.get();
+	
+	uint8_t count = names.size() ; 
+	memcpy(tmp,(const char *)&count,1);
+
+	int pos = 1 ;//初始位置
+	for(auto & it : names){
+		memcpy(tmp + pos , (const char *)&it.first,1);
+		++pos;
+		int size = it.second.size();
+		memcpy(tmp + pos , (const char *)&size,4);
+		pos += 4; 
+		memcpy(tmp + pos, it.second.c_str(),size);
+		pos += size; 
+	}
+	
+	ba->writeFUint16(pos);
+
+	int key = encrypt(tmp,pos);
+	ba->writeInt32(key);
+	ba->write(tmp,pos);
 	return sock->sendFrom(ba,ba->getSize());
 }
 
@@ -105,15 +149,19 @@ int CardDistributor::send(Socket::ptr sock
 	return 0 ; 
 }
 
-int TickleAddUser::send(Socket::ptr sock ,const std::string & name){
+int TickleAddUser::send(Socket::ptr sock ,const std::string & name,uint8_t pri){
 	ByteArray::ptr ba(new ByteArray(64));
 	ba->writeFInt16((int16_t)MsgRsp::ADDTICKLE);
-	ba->writeFUint16(name.size());
-	std::string str = name ; 
-	int key = encrypt(&str[0],name.size());
+	ba->writeFUint16(name.size()+1);
+
+	char buf[20] = {0};
+	memcpy(buf,name.c_str(),name.size());
+	memcpy(buf+name.size(),(const char *)&pri,1);
+
+	int key = encrypt(buf,name.size() + 1);
 	ba->writeInt32(key);
 
-	ba->write(&str[0],name.size());
+	ba->write(buf,name.size()+1);
 	sock->sendFrom(ba,ba->getSize());
 	return 0 ; 
 }
@@ -152,6 +200,80 @@ int TickleIsCall::send(Socket::ptr sock, uint8_t priority ,uint8_t callOrRob){
 	return sock->sendFrom(ba,4);
 }
 
+int LandlordCard::send(Socket::ptr sock ,const uint8_t * cards,uint8_t who){
+	ByteArray::ptr ba(new ByteArray(32));
+	ba->writeFInt16((int16_t)MsgRsp::LANDCARD);
+	ba->writeFUint16(4);
+	
+	char buf[4] = {0} ; 
+	buf[0] = who; 
+	memcpy(buf+1,cards,3);
+
+	int key = encrypt(buf,4);
+
+	ba->writeInt32(key);
+	ba->write(buf,4);
+
+	return sock->sendFrom(ba,ba->getSize());
+}
+
+int Asking::send(Socket::ptr sock,uint8_t who){
+	ByteArray::ptr ba(new ByteArray(4));
+	ba->writeFInt16((uint16_t)MsgRsp::ASKING);
+	//std::cout<< (int)who << std::endl;
+	ba->writeFUint8(who);
+	return sock->sendFrom(ba,ba->getSize());
+}
+
+int PutCard::parser(ByteArray::ptr ba ,std::function<void (
+							 std::shared_ptr<char>, uint8_t,double,int)> cb ){
+	uint16_t bodysize = 0 ; 
+	ba->readFUint16(bodysize);
+	if(bodysize == 0){
+		cb(nullptr,0,0,0);
+		return 0; 
+	}
+	assert(bodysize <= 32);
+
+	int key = 0 ; 
+	ba->readInt32(key);
+	std::shared_ptr<char> buffs(new char[36],[](char * ptr){
+		delete[] ptr; 
+	});
+	char * buf = buffs.get();
+	ba->read(buf,bodysize);
+	
+	disencrypt((char*)buf,bodysize,key);//解密
+	
+	int count = bodysize -sizeof(double) - sizeof(int);
+	double cardType = *(double*)(buf + count);
+	int cardnum = *(int*)(buf+count+sizeof(double));
+
+	cb(buffs,count,cardType,cardnum);
+	return 0 ; 
+}
+
+int ShowCard::send(Socket::ptr sock ,std::shared_ptr<char> buf,
+									uint8_t count,uint8_t who,double type,int num){
+	char card[36] = {0};
+	memcpy(card,buf.get(),count);
+	memcpy(card + count,(char*)&who,1);
+	memcpy(card + count + 1,(char*)&type,8);
+	memcpy(card + count + 9,(char*)&num,4);
+	
+	count += 13; 
+
+	ByteArray::ptr ba(new ByteArray(36));
+	ba->writeFInt16((uint16_t)MsgRsp::SHOWCARD);
+	ba->writeFUint16(count);
+
+	int key = encrypt((char*)card,count);
+	ba->writeInt32(key);
+	
+	ba->write(card,count);
+	return sock->sendFrom(ba,ba->getSize());
+}
+
 Responder::Responder(Socket::ptr sock , ByteArray::ptr ba)
 	:m_sock(sock)
 	,m_ba(ba){
@@ -172,12 +294,13 @@ int Responder::responce(int type){
 	}else if(type == 2){
 		//解析加入会议协议，
 		//并将该用户加入到会议
-		std::function<int(const std::string &)> cb = std::bind(&PlayRoom::accessToRoom,RoomMgr::GetInstance(),m_sock,std::placeholders::_1);
-		int roomId = AddSession::parser(m_ba
+		std::pair<int,uint8_t> ret = AddSession::parser(m_ba
 		,std::bind(&PlayRoom::accessToRoom,RoomMgr::GetInstance(),m_sock,std::placeholders::_1));
 		//加入会议返回会议号
-		AddSessionRsp::send(m_sock,roomId);
-		return 0; 
+		//std::cout<< (int)ret.second<<std::endl;
+		AddSessionRsp::send(m_sock,ret.first,ret.second);
+
+		return 2; 
 	}
 	return -1 ; 
 }

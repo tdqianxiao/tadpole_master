@@ -34,7 +34,7 @@ void func(const std::string& name){
 	HtmlServlet::ptr htmlser(new HtmlServlet(name));
 	std::string str(&name[0]+g_html_root_path.size(),name.size()-g_html_root_path.size());
 	ServletMgr::GetInstance()->addServlet(str,htmlser);
-	TADPOLE_LOG_INFO(TADPOLE_FIND_LOGGER("root")) <<str<<" - "<<name ; 
+	//TADPOLE_LOG_INFO(TADPOLE_FIND_LOGGER("root")) <<str<<" - "<<name ; 
 }
 
 struct _HtmlIniter{

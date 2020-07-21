@@ -107,12 +107,13 @@ static ssize_t do_io(int fd , OldFun func ,const char * hook_fun_name ,
 	if(!sts->isSocket() || sts->getUserNonblock()){
 		return func(fd,std::forward<Args>(args)...);
 	}
-	
-	//获得该文件描述符的超时时间
-	uint64_t to = sts->getTimeOut(timeout_so);
+	uint64_t to = 0;
 	//用于条件定时器
 	std::shared_ptr<timer_info> tinfo(new timer_info);
 retry:
+	//获得该文件描述符的超时时间
+	to = sts->getTimeOut(timeout_so);
+
 	ssize_t n = func(fd,std::forward<Args>(args)...);
 	//有超时时间的函数，如果超时会继续重复执行
 	while(n == -1 && errno == EINTR){	
@@ -125,12 +126,15 @@ retry:
         std::weak_ptr<timer_info> winfo(tinfo);
 
 		if(to != (uint64_t)-1) {
+			//TADPOLE_LOG_INFO(g_logger)<< "time out : "<< to ;
 			//添加条件定时器，若在延时期间未触发事件直接将事件取消
             timer = iom->addCondTimer(to, [winfo, fd, iom, event]() {
                 auto t = winfo.lock();
                 if(!t || t->cancelled) {
                     return;
                 }
+
+				//TADPOLE_LOG_INFO(g_logger)<< "hehe : " ;
                 t->cancelled = ETIMEDOUT;
                 iom->cancelEvent(fd, (tadpole::IOManager::Event)(event));
             }, winfo);
@@ -156,6 +160,11 @@ retry:
                 errno = tinfo->cancelled;
                 return -2;
             }
+			//如果设置了退出就直接出来
+			if(sts->isAutoStop()){
+				sts->setAutoStop(false);
+				return -3;
+			}
 			//直接回到上面继续io操作
             goto retry;
         }

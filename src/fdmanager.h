@@ -37,7 +37,16 @@ public:
 	 * @brief 返回该文件描述符是否初始化
 	 */
 	bool isInit()const {return m_isInit;}
-
+	
+	/**
+	 * @brief 比如说recv是，获得取消时是否退出来
+	 */
+	bool isAutoStop()const{return m_isAutoStop;}
+	
+	/**
+	 * @brief 设置取消时是否退出来
+	 */
+	void setAutoStop(bool isstop){m_isAutoStop = isstop;}
 	/**
 	 * @brief 返回该文件描述符是否为socket
 	 */
@@ -96,6 +105,8 @@ private:
 	bool m_userNonblock = 0;
 	//文件描述符是否关闭
 	bool m_isClose = 0 ; 
+	//取消事件是是否退出来
+	bool m_isAutoStop = false;
 	//读超时
 	uint64_t m_recvTimeOut = -1 ; 
 	//写超时

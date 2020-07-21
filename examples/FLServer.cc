@@ -1,5 +1,6 @@
 #include "FightLandlord/ws_session.h"
 #include "src/tcpserver.h"
+#include "src/log.h"
 
 using namespace tadpole;
 
@@ -11,7 +12,10 @@ public:
 			sess->recvRequest();
 		}while(!sess->isClose());
 		//关闭socket
-		sock->close();
+		if(sess->closeSock()){
+			sock->close();
+		}
+		//TADPOLE_LOG_DEBUG(TADPOLE_FIND_LOGGER("root"))<<sock->getSocket()<< " : out";
 	}
 };
 

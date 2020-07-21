@@ -62,17 +62,6 @@ CMAKE_BINARY_DIR = /root/project/tadpole_master
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -83,6 +72,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -117,251 +117,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_scheduler
+# Target rules for targets named test_lua
 
 # Build rule for target.
-test_scheduler: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_scheduler
-.PHONY : test_scheduler
+test_lua: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_lua
+.PHONY : test_lua
 
 # fast build rule for target.
-test_scheduler/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
-.PHONY : test_scheduler/fast
+test_lua/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_lua.dir/build.make CMakeFiles/test_lua.dir/build
+.PHONY : test_lua/fast
 
 #=============================================================================
-# Target rules for targets named test_fiber
+# Target rules for targets named fl_server
 
 # Build rule for target.
-test_fiber: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_fiber
-.PHONY : test_fiber
+fl_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fl_server
+.PHONY : fl_server
 
 # fast build rule for target.
-test_fiber/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
-.PHONY : test_fiber/fast
-
-#=============================================================================
-# Target rules for targets named test_httpserver
-
-# Build rule for target.
-test_httpserver: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_httpserver
-.PHONY : test_httpserver
-
-# fast build rule for target.
-test_httpserver/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/build
-.PHONY : test_httpserver/fast
-
-#=============================================================================
-# Target rules for targets named test_thread
-
-# Build rule for target.
-test_thread: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_thread
-.PHONY : test_thread
-
-# fast build rule for target.
-test_thread/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
-.PHONY : test_thread/fast
-
-#=============================================================================
-# Target rules for targets named test_yaml
-
-# Build rule for target.
-test_yaml: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_yaml
-.PHONY : test_yaml
-
-# fast build rule for target.
-test_yaml/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_yaml.dir/build.make CMakeFiles/test_yaml.dir/build
-.PHONY : test_yaml/fast
-
-#=============================================================================
-# Target rules for targets named test_socket
-
-# Build rule for target.
-test_socket: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_socket
-.PHONY : test_socket
-
-# fast build rule for target.
-test_socket/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
-.PHONY : test_socket/fast
-
-#=============================================================================
-# Target rules for targets named test_config
-
-# Build rule for target.
-test_config: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_config
-.PHONY : test_config
-
-# fast build rule for target.
-test_config/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
-.PHONY : test_config/fast
-
-#=============================================================================
-# Target rules for targets named test_httpsession
-
-# Build rule for target.
-test_httpsession: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_httpsession
-.PHONY : test_httpsession
-
-# fast build rule for target.
-test_httpsession/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpsession.dir/build.make CMakeFiles/test_httpsession.dir/build
-.PHONY : test_httpsession/fast
-
-#=============================================================================
-# Target rules for targets named test_log
-
-# Build rule for target.
-test_log: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_log
-.PHONY : test_log
-
-# fast build rule for target.
-test_log/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/build
-.PHONY : test_log/fast
-
-#=============================================================================
-# Target rules for targets named test_parser
-
-# Build rule for target.
-test_parser: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_parser
-.PHONY : test_parser
-
-# fast build rule for target.
-test_parser/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/build
-.PHONY : test_parser/fast
-
-#=============================================================================
-# Target rules for targets named test_addr
-
-# Build rule for target.
-test_addr: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_addr
-.PHONY : test_addr
-
-# fast build rule for target.
-test_addr/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/build
-.PHONY : test_addr/fast
-
-#=============================================================================
-# Target rules for targets named tadpole
-
-# Build rule for target.
-tadpole: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tadpole
-.PHONY : tadpole
-
-# fast build rule for target.
-tadpole/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/build
-.PHONY : tadpole/fast
-
-#=============================================================================
-# Target rules for targets named test_bytearray
-
-# Build rule for target.
-test_bytearray: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_bytearray
-.PHONY : test_bytearray
-
-# fast build rule for target.
-test_bytearray/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/build
-.PHONY : test_bytearray/fast
-
-#=============================================================================
-# Target rules for targets named test_hook
-
-# Build rule for target.
-test_hook: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hook
-.PHONY : test_hook
-
-# fast build rule for target.
-test_hook/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
-.PHONY : test_hook/fast
-
-#=============================================================================
-# Target rules for targets named test_tcpserver
-
-# Build rule for target.
-test_tcpserver: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tcpserver
-.PHONY : test_tcpserver
-
-# fast build rule for target.
-test_tcpserver/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/build
-.PHONY : test_tcpserver/fast
-
-#=============================================================================
-# Target rules for targets named echo_server
-
-# Build rule for target.
-echo_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 echo_server
-.PHONY : echo_server
-
-# fast build rule for target.
-echo_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
-.PHONY : echo_server/fast
-
-#=============================================================================
-# Target rules for targets named test_httprequest
-
-# Build rule for target.
-test_httprequest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_httprequest
-.PHONY : test_httprequest
-
-# fast build rule for target.
-test_httprequest/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httprequest.dir/build.make CMakeFiles/test_httprequest.dir/build
-.PHONY : test_httprequest/fast
-
-#=============================================================================
-# Target rules for targets named test_httpresponce
-
-# Build rule for target.
-test_httpresponce: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_httpresponce
-.PHONY : test_httpresponce
-
-# fast build rule for target.
-test_httpresponce/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpresponce.dir/build.make CMakeFiles/test_httpresponce.dir/build
-.PHONY : test_httpresponce/fast
-
-#=============================================================================
-# Target rules for targets named test_random
-
-# Build rule for target.
-test_random: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_random
-.PHONY : test_random
-
-# fast build rule for target.
-test_random/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_random.dir/build.make CMakeFiles/test_random.dir/build
-.PHONY : test_random/fast
+fl_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fl_server.dir/build.make CMakeFiles/fl_server.dir/build
+.PHONY : fl_server/fast
 
 #=============================================================================
 # Target rules for targets named test_iomanager
@@ -377,17 +156,17 @@ test_iomanager/fast:
 .PHONY : test_iomanager/fast
 
 #=============================================================================
-# Target rules for targets named fl_server
+# Target rules for targets named tadpole
 
 # Build rule for target.
-fl_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fl_server
-.PHONY : fl_server
+tadpole: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tadpole
+.PHONY : tadpole
 
 # fast build rule for target.
-fl_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fl_server.dir/build.make CMakeFiles/fl_server.dir/build
-.PHONY : fl_server/fast
+tadpole/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/build
+.PHONY : tadpole/fast
 
 examples/FLServer.o: examples/FLServer.cc.o
 
@@ -523,33 +302,6 @@ examples/FightLandlord/ws_session.s: examples/FightLandlord/ws_session.cc.s
 examples/FightLandlord/ws_session.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/examples/FightLandlord/ws_session.cc.s
 .PHONY : examples/FightLandlord/ws_session.cc.s
-
-examples/echoServer.o: examples/echoServer.cc.o
-
-.PHONY : examples/echoServer.o
-
-# target to build an object file
-examples/echoServer.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echoServer.cc.o
-.PHONY : examples/echoServer.cc.o
-
-examples/echoServer.i: examples/echoServer.cc.i
-
-.PHONY : examples/echoServer.i
-
-# target to preprocess a source file
-examples/echoServer.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echoServer.cc.i
-.PHONY : examples/echoServer.cc.i
-
-examples/echoServer.s: examples/echoServer.cc.s
-
-.PHONY : examples/echoServer.s
-
-# target to generate assembly for a file
-examples/echoServer.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echoServer.cc.s
-.PHONY : examples/echoServer.cc.s
 
 src/address.o: src/address.cc.o
 
@@ -929,6 +681,60 @@ src/log.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/log.cc.s
 .PHONY : src/log.cc.s
 
+src/luaregister.o: src/luaregister.cc.o
+
+.PHONY : src/luaregister.o
+
+# target to build an object file
+src/luaregister.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/luaregister.cc.o
+.PHONY : src/luaregister.cc.o
+
+src/luaregister.i: src/luaregister.cc.i
+
+.PHONY : src/luaregister.i
+
+# target to preprocess a source file
+src/luaregister.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/luaregister.cc.i
+.PHONY : src/luaregister.cc.i
+
+src/luaregister.s: src/luaregister.cc.s
+
+.PHONY : src/luaregister.s
+
+# target to generate assembly for a file
+src/luaregister.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/luaregister.cc.s
+.PHONY : src/luaregister.cc.s
+
+src/luastack.o: src/luastack.cc.o
+
+.PHONY : src/luastack.o
+
+# target to build an object file
+src/luastack.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/luastack.cc.o
+.PHONY : src/luastack.cc.o
+
+src/luastack.i: src/luastack.cc.i
+
+.PHONY : src/luastack.i
+
+# target to preprocess a source file
+src/luastack.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/luastack.cc.i
+.PHONY : src/luastack.cc.i
+
+src/luastack.s: src/luastack.cc.s
+
+.PHONY : src/luastack.s
+
+# target to generate assembly for a file
+src/luastack.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/luastack.cc.s
+.PHONY : src/luastack.cc.s
+
 src/mutex.o: src/mutex.cc.o
 
 .PHONY : src/mutex.o
@@ -1118,249 +924,6 @@ src/util.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tadpole.dir/build.make CMakeFiles/tadpole.dir/src/util.cc.s
 .PHONY : src/util.cc.s
 
-tests/test_addr.o: tests/test_addr.cc.o
-
-.PHONY : tests/test_addr.o
-
-# target to build an object file
-tests/test_addr.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/tests/test_addr.cc.o
-.PHONY : tests/test_addr.cc.o
-
-tests/test_addr.i: tests/test_addr.cc.i
-
-.PHONY : tests/test_addr.i
-
-# target to preprocess a source file
-tests/test_addr.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/tests/test_addr.cc.i
-.PHONY : tests/test_addr.cc.i
-
-tests/test_addr.s: tests/test_addr.cc.s
-
-.PHONY : tests/test_addr.s
-
-# target to generate assembly for a file
-tests/test_addr.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_addr.dir/build.make CMakeFiles/test_addr.dir/tests/test_addr.cc.s
-.PHONY : tests/test_addr.cc.s
-
-tests/test_bytearray.o: tests/test_bytearray.cc.o
-
-.PHONY : tests/test_bytearray.o
-
-# target to build an object file
-tests/test_bytearray.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cc.o
-.PHONY : tests/test_bytearray.cc.o
-
-tests/test_bytearray.i: tests/test_bytearray.cc.i
-
-.PHONY : tests/test_bytearray.i
-
-# target to preprocess a source file
-tests/test_bytearray.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cc.i
-.PHONY : tests/test_bytearray.cc.i
-
-tests/test_bytearray.s: tests/test_bytearray.cc.s
-
-.PHONY : tests/test_bytearray.s
-
-# target to generate assembly for a file
-tests/test_bytearray.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cc.s
-.PHONY : tests/test_bytearray.cc.s
-
-tests/test_config.o: tests/test_config.cc.o
-
-.PHONY : tests/test_config.o
-
-# target to build an object file
-tests/test_config.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.o
-.PHONY : tests/test_config.cc.o
-
-tests/test_config.i: tests/test_config.cc.i
-
-.PHONY : tests/test_config.i
-
-# target to preprocess a source file
-tests/test_config.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.i
-.PHONY : tests/test_config.cc.i
-
-tests/test_config.s: tests/test_config.cc.s
-
-.PHONY : tests/test_config.s
-
-# target to generate assembly for a file
-tests/test_config.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.s
-.PHONY : tests/test_config.cc.s
-
-tests/test_fiber.o: tests/test_fiber.cc.o
-
-.PHONY : tests/test_fiber.o
-
-# target to build an object file
-tests/test_fiber.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o
-.PHONY : tests/test_fiber.cc.o
-
-tests/test_fiber.i: tests/test_fiber.cc.i
-
-.PHONY : tests/test_fiber.i
-
-# target to preprocess a source file
-tests/test_fiber.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.i
-.PHONY : tests/test_fiber.cc.i
-
-tests/test_fiber.s: tests/test_fiber.cc.s
-
-.PHONY : tests/test_fiber.s
-
-# target to generate assembly for a file
-tests/test_fiber.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.s
-.PHONY : tests/test_fiber.cc.s
-
-tests/test_hook.o: tests/test_hook.cc.o
-
-.PHONY : tests/test_hook.o
-
-# target to build an object file
-tests/test_hook.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.o
-.PHONY : tests/test_hook.cc.o
-
-tests/test_hook.i: tests/test_hook.cc.i
-
-.PHONY : tests/test_hook.i
-
-# target to preprocess a source file
-tests/test_hook.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.i
-.PHONY : tests/test_hook.cc.i
-
-tests/test_hook.s: tests/test_hook.cc.s
-
-.PHONY : tests/test_hook.s
-
-# target to generate assembly for a file
-tests/test_hook.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.s
-.PHONY : tests/test_hook.cc.s
-
-tests/test_httprequest.o: tests/test_httprequest.cc.o
-
-.PHONY : tests/test_httprequest.o
-
-# target to build an object file
-tests/test_httprequest.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httprequest.dir/build.make CMakeFiles/test_httprequest.dir/tests/test_httprequest.cc.o
-.PHONY : tests/test_httprequest.cc.o
-
-tests/test_httprequest.i: tests/test_httprequest.cc.i
-
-.PHONY : tests/test_httprequest.i
-
-# target to preprocess a source file
-tests/test_httprequest.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httprequest.dir/build.make CMakeFiles/test_httprequest.dir/tests/test_httprequest.cc.i
-.PHONY : tests/test_httprequest.cc.i
-
-tests/test_httprequest.s: tests/test_httprequest.cc.s
-
-.PHONY : tests/test_httprequest.s
-
-# target to generate assembly for a file
-tests/test_httprequest.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httprequest.dir/build.make CMakeFiles/test_httprequest.dir/tests/test_httprequest.cc.s
-.PHONY : tests/test_httprequest.cc.s
-
-tests/test_httpresponce.o: tests/test_httpresponce.cc.o
-
-.PHONY : tests/test_httpresponce.o
-
-# target to build an object file
-tests/test_httpresponce.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpresponce.dir/build.make CMakeFiles/test_httpresponce.dir/tests/test_httpresponce.cc.o
-.PHONY : tests/test_httpresponce.cc.o
-
-tests/test_httpresponce.i: tests/test_httpresponce.cc.i
-
-.PHONY : tests/test_httpresponce.i
-
-# target to preprocess a source file
-tests/test_httpresponce.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpresponce.dir/build.make CMakeFiles/test_httpresponce.dir/tests/test_httpresponce.cc.i
-.PHONY : tests/test_httpresponce.cc.i
-
-tests/test_httpresponce.s: tests/test_httpresponce.cc.s
-
-.PHONY : tests/test_httpresponce.s
-
-# target to generate assembly for a file
-tests/test_httpresponce.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpresponce.dir/build.make CMakeFiles/test_httpresponce.dir/tests/test_httpresponce.cc.s
-.PHONY : tests/test_httpresponce.cc.s
-
-tests/test_httpserver.o: tests/test_httpserver.cc.o
-
-.PHONY : tests/test_httpserver.o
-
-# target to build an object file
-tests/test_httpserver.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/tests/test_httpserver.cc.o
-.PHONY : tests/test_httpserver.cc.o
-
-tests/test_httpserver.i: tests/test_httpserver.cc.i
-
-.PHONY : tests/test_httpserver.i
-
-# target to preprocess a source file
-tests/test_httpserver.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/tests/test_httpserver.cc.i
-.PHONY : tests/test_httpserver.cc.i
-
-tests/test_httpserver.s: tests/test_httpserver.cc.s
-
-.PHONY : tests/test_httpserver.s
-
-# target to generate assembly for a file
-tests/test_httpserver.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/tests/test_httpserver.cc.s
-.PHONY : tests/test_httpserver.cc.s
-
-tests/test_httpsession.o: tests/test_httpsession.cc.o
-
-.PHONY : tests/test_httpsession.o
-
-# target to build an object file
-tests/test_httpsession.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpsession.dir/build.make CMakeFiles/test_httpsession.dir/tests/test_httpsession.cc.o
-.PHONY : tests/test_httpsession.cc.o
-
-tests/test_httpsession.i: tests/test_httpsession.cc.i
-
-.PHONY : tests/test_httpsession.i
-
-# target to preprocess a source file
-tests/test_httpsession.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpsession.dir/build.make CMakeFiles/test_httpsession.dir/tests/test_httpsession.cc.i
-.PHONY : tests/test_httpsession.cc.i
-
-tests/test_httpsession.s: tests/test_httpsession.cc.s
-
-.PHONY : tests/test_httpsession.s
-
-# target to generate assembly for a file
-tests/test_httpsession.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpsession.dir/build.make CMakeFiles/test_httpsession.dir/tests/test_httpsession.cc.s
-.PHONY : tests/test_httpsession.cc.s
-
 tests/test_iomanager.o: tests/test_iomanager.cc.o
 
 .PHONY : tests/test_iomanager.o
@@ -1388,221 +951,32 @@ tests/test_iomanager.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.s
 .PHONY : tests/test_iomanager.cc.s
 
-tests/test_log.o: tests/test_log.cc.o
+tests/test_lua.o: tests/test_lua.cc.o
 
-.PHONY : tests/test_log.o
-
-# target to build an object file
-tests/test_log.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/tests/test_log.cc.o
-.PHONY : tests/test_log.cc.o
-
-tests/test_log.i: tests/test_log.cc.i
-
-.PHONY : tests/test_log.i
-
-# target to preprocess a source file
-tests/test_log.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/tests/test_log.cc.i
-.PHONY : tests/test_log.cc.i
-
-tests/test_log.s: tests/test_log.cc.s
-
-.PHONY : tests/test_log.s
-
-# target to generate assembly for a file
-tests/test_log.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/tests/test_log.cc.s
-.PHONY : tests/test_log.cc.s
-
-tests/test_parser.o: tests/test_parser.cc.o
-
-.PHONY : tests/test_parser.o
+.PHONY : tests/test_lua.o
 
 # target to build an object file
-tests/test_parser.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/tests/test_parser.cc.o
-.PHONY : tests/test_parser.cc.o
+tests/test_lua.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_lua.dir/build.make CMakeFiles/test_lua.dir/tests/test_lua.cc.o
+.PHONY : tests/test_lua.cc.o
 
-tests/test_parser.i: tests/test_parser.cc.i
+tests/test_lua.i: tests/test_lua.cc.i
 
-.PHONY : tests/test_parser.i
-
-# target to preprocess a source file
-tests/test_parser.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/tests/test_parser.cc.i
-.PHONY : tests/test_parser.cc.i
-
-tests/test_parser.s: tests/test_parser.cc.s
-
-.PHONY : tests/test_parser.s
-
-# target to generate assembly for a file
-tests/test_parser.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/tests/test_parser.cc.s
-.PHONY : tests/test_parser.cc.s
-
-tests/test_random.o: tests/test_random.cc.o
-
-.PHONY : tests/test_random.o
-
-# target to build an object file
-tests/test_random.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_random.dir/build.make CMakeFiles/test_random.dir/tests/test_random.cc.o
-.PHONY : tests/test_random.cc.o
-
-tests/test_random.i: tests/test_random.cc.i
-
-.PHONY : tests/test_random.i
+.PHONY : tests/test_lua.i
 
 # target to preprocess a source file
-tests/test_random.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_random.dir/build.make CMakeFiles/test_random.dir/tests/test_random.cc.i
-.PHONY : tests/test_random.cc.i
+tests/test_lua.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_lua.dir/build.make CMakeFiles/test_lua.dir/tests/test_lua.cc.i
+.PHONY : tests/test_lua.cc.i
 
-tests/test_random.s: tests/test_random.cc.s
+tests/test_lua.s: tests/test_lua.cc.s
 
-.PHONY : tests/test_random.s
-
-# target to generate assembly for a file
-tests/test_random.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_random.dir/build.make CMakeFiles/test_random.dir/tests/test_random.cc.s
-.PHONY : tests/test_random.cc.s
-
-tests/test_scheduler.o: tests/test_scheduler.cc.o
-
-.PHONY : tests/test_scheduler.o
-
-# target to build an object file
-tests/test_scheduler.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o
-.PHONY : tests/test_scheduler.cc.o
-
-tests/test_scheduler.i: tests/test_scheduler.cc.i
-
-.PHONY : tests/test_scheduler.i
-
-# target to preprocess a source file
-tests/test_scheduler.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.i
-.PHONY : tests/test_scheduler.cc.i
-
-tests/test_scheduler.s: tests/test_scheduler.cc.s
-
-.PHONY : tests/test_scheduler.s
+.PHONY : tests/test_lua.s
 
 # target to generate assembly for a file
-tests/test_scheduler.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.s
-.PHONY : tests/test_scheduler.cc.s
-
-tests/test_socket.o: tests/test_socket.cc.o
-
-.PHONY : tests/test_socket.o
-
-# target to build an object file
-tests/test_socket.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/tests/test_socket.cc.o
-.PHONY : tests/test_socket.cc.o
-
-tests/test_socket.i: tests/test_socket.cc.i
-
-.PHONY : tests/test_socket.i
-
-# target to preprocess a source file
-tests/test_socket.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/tests/test_socket.cc.i
-.PHONY : tests/test_socket.cc.i
-
-tests/test_socket.s: tests/test_socket.cc.s
-
-.PHONY : tests/test_socket.s
-
-# target to generate assembly for a file
-tests/test_socket.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/tests/test_socket.cc.s
-.PHONY : tests/test_socket.cc.s
-
-tests/test_tcpserver.o: tests/test_tcpserver.cc.o
-
-.PHONY : tests/test_tcpserver.o
-
-# target to build an object file
-tests/test_tcpserver.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cc.o
-.PHONY : tests/test_tcpserver.cc.o
-
-tests/test_tcpserver.i: tests/test_tcpserver.cc.i
-
-.PHONY : tests/test_tcpserver.i
-
-# target to preprocess a source file
-tests/test_tcpserver.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cc.i
-.PHONY : tests/test_tcpserver.cc.i
-
-tests/test_tcpserver.s: tests/test_tcpserver.cc.s
-
-.PHONY : tests/test_tcpserver.s
-
-# target to generate assembly for a file
-tests/test_tcpserver.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cc.s
-.PHONY : tests/test_tcpserver.cc.s
-
-tests/test_thread.o: tests/test_thread.cc.o
-
-.PHONY : tests/test_thread.o
-
-# target to build an object file
-tests/test_thread.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.o
-.PHONY : tests/test_thread.cc.o
-
-tests/test_thread.i: tests/test_thread.cc.i
-
-.PHONY : tests/test_thread.i
-
-# target to preprocess a source file
-tests/test_thread.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.i
-.PHONY : tests/test_thread.cc.i
-
-tests/test_thread.s: tests/test_thread.cc.s
-
-.PHONY : tests/test_thread.s
-
-# target to generate assembly for a file
-tests/test_thread.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.s
-.PHONY : tests/test_thread.cc.s
-
-tests/test_yaml.o: tests/test_yaml.cc.o
-
-.PHONY : tests/test_yaml.o
-
-# target to build an object file
-tests/test_yaml.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_yaml.dir/build.make CMakeFiles/test_yaml.dir/tests/test_yaml.cc.o
-.PHONY : tests/test_yaml.cc.o
-
-tests/test_yaml.i: tests/test_yaml.cc.i
-
-.PHONY : tests/test_yaml.i
-
-# target to preprocess a source file
-tests/test_yaml.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_yaml.dir/build.make CMakeFiles/test_yaml.dir/tests/test_yaml.cc.i
-.PHONY : tests/test_yaml.cc.i
-
-tests/test_yaml.s: tests/test_yaml.cc.s
-
-.PHONY : tests/test_yaml.s
-
-# target to generate assembly for a file
-tests/test_yaml.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_yaml.dir/build.make CMakeFiles/test_yaml.dir/tests/test_yaml.cc.s
-.PHONY : tests/test_yaml.cc.s
+tests/test_lua.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_lua.dir/build.make CMakeFiles/test_lua.dir/tests/test_lua.cc.s
+.PHONY : tests/test_lua.cc.s
 
 # Help Target
 help:
@@ -1610,29 +984,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... test_scheduler"
-	@echo "... test_fiber"
-	@echo "... test_httpserver"
-	@echo "... test_thread"
-	@echo "... test_yaml"
-	@echo "... test_socket"
-	@echo "... test_config"
-	@echo "... test_httpsession"
-	@echo "... test_log"
-	@echo "... test_parser"
-	@echo "... test_addr"
-	@echo "... tadpole"
 	@echo "... edit_cache"
-	@echo "... test_bytearray"
-	@echo "... test_hook"
-	@echo "... test_tcpserver"
-	@echo "... echo_server"
-	@echo "... test_httprequest"
-	@echo "... test_httpresponce"
-	@echo "... test_random"
-	@echo "... test_iomanager"
+	@echo "... rebuild_cache"
+	@echo "... test_lua"
 	@echo "... fl_server"
+	@echo "... test_iomanager"
+	@echo "... tadpole"
 	@echo "... examples/FLServer.o"
 	@echo "... examples/FLServer.i"
 	@echo "... examples/FLServer.s"
@@ -1648,9 +1005,6 @@ help:
 	@echo "... examples/FightLandlord/ws_session.o"
 	@echo "... examples/FightLandlord/ws_session.i"
 	@echo "... examples/FightLandlord/ws_session.s"
-	@echo "... examples/echoServer.o"
-	@echo "... examples/echoServer.i"
-	@echo "... examples/echoServer.s"
 	@echo "... src/address.o"
 	@echo "... src/address.i"
 	@echo "... src/address.s"
@@ -1693,6 +1047,12 @@ help:
 	@echo "... src/log.o"
 	@echo "... src/log.i"
 	@echo "... src/log.s"
+	@echo "... src/luaregister.o"
+	@echo "... src/luaregister.i"
+	@echo "... src/luaregister.s"
+	@echo "... src/luastack.o"
+	@echo "... src/luastack.i"
+	@echo "... src/luastack.s"
 	@echo "... src/mutex.o"
 	@echo "... src/mutex.i"
 	@echo "... src/mutex.s"
@@ -1714,60 +1074,12 @@ help:
 	@echo "... src/util.o"
 	@echo "... src/util.i"
 	@echo "... src/util.s"
-	@echo "... tests/test_addr.o"
-	@echo "... tests/test_addr.i"
-	@echo "... tests/test_addr.s"
-	@echo "... tests/test_bytearray.o"
-	@echo "... tests/test_bytearray.i"
-	@echo "... tests/test_bytearray.s"
-	@echo "... tests/test_config.o"
-	@echo "... tests/test_config.i"
-	@echo "... tests/test_config.s"
-	@echo "... tests/test_fiber.o"
-	@echo "... tests/test_fiber.i"
-	@echo "... tests/test_fiber.s"
-	@echo "... tests/test_hook.o"
-	@echo "... tests/test_hook.i"
-	@echo "... tests/test_hook.s"
-	@echo "... tests/test_httprequest.o"
-	@echo "... tests/test_httprequest.i"
-	@echo "... tests/test_httprequest.s"
-	@echo "... tests/test_httpresponce.o"
-	@echo "... tests/test_httpresponce.i"
-	@echo "... tests/test_httpresponce.s"
-	@echo "... tests/test_httpserver.o"
-	@echo "... tests/test_httpserver.i"
-	@echo "... tests/test_httpserver.s"
-	@echo "... tests/test_httpsession.o"
-	@echo "... tests/test_httpsession.i"
-	@echo "... tests/test_httpsession.s"
 	@echo "... tests/test_iomanager.o"
 	@echo "... tests/test_iomanager.i"
 	@echo "... tests/test_iomanager.s"
-	@echo "... tests/test_log.o"
-	@echo "... tests/test_log.i"
-	@echo "... tests/test_log.s"
-	@echo "... tests/test_parser.o"
-	@echo "... tests/test_parser.i"
-	@echo "... tests/test_parser.s"
-	@echo "... tests/test_random.o"
-	@echo "... tests/test_random.i"
-	@echo "... tests/test_random.s"
-	@echo "... tests/test_scheduler.o"
-	@echo "... tests/test_scheduler.i"
-	@echo "... tests/test_scheduler.s"
-	@echo "... tests/test_socket.o"
-	@echo "... tests/test_socket.i"
-	@echo "... tests/test_socket.s"
-	@echo "... tests/test_tcpserver.o"
-	@echo "... tests/test_tcpserver.i"
-	@echo "... tests/test_tcpserver.s"
-	@echo "... tests/test_thread.o"
-	@echo "... tests/test_thread.i"
-	@echo "... tests/test_thread.s"
-	@echo "... tests/test_yaml.o"
-	@echo "... tests/test_yaml.i"
-	@echo "... tests/test_yaml.s"
+	@echo "... tests/test_lua.o"
+	@echo "... tests/test_lua.i"
+	@echo "... tests/test_lua.s"
 .PHONY : help
 
 
